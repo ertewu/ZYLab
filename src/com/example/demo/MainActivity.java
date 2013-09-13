@@ -3,37 +3,44 @@ package com.example.demo;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.example.demo.cases.CaseInterpolator;
+import com.example.demo.cases.anims.CaseForAnim1;
+import com.example.demo.cases.annotationdemo.CaseForAnnotation;
 
 public class MainActivity extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		// setContentView(R.layout.activity_main);
 
-        CaseInterpolator.obtain(this).work();
+		CaseForAnim1.getInstance(this).work();
+//		CaseForAnnotation.getInstance(this).work();
 
-//        CaseViewConfiguration.obtain(this).work();
+		// CaseForDraw.getInstance(this).work();
 
-//        CaseBitMask.obtain().work();
+		// CaseInterpolator.obtain(this).work();
 
-//        CaseForTouch.obtain(this).work4();
+		// CaseViewConfiguration.obtain(this).work();
 
-        // CaseExecutor.getInstance().work(0);
+		// CaseBitMask.obtain().work();
 
-        // CaseObserver.getInstance().work();
+		// CaseForTouch.obtain(this).work4();
 
-        // (new Handler()).postDelayed(new Runnable(){
-        // @Override
-        // public void run() {
-        // CaseDefaultBrowser.getInstance().work1(MainActivity.this);
-        // }
-        // }, 1000);
+		// CaseExecutor.getInstance().work(0);
 
-        // CaseDecorator.getInstance().work();
+		// CaseObserver.getInstance().work();
 
-        // String str= CaseForJson.assembleMsgIdArrayStr("wangzhengyu");
-        // Log.i("ertewu","str is:"+str);
-    }
+		// (new Handler()).postDelayed(new Runnable(){
+		// @Override
+		// public void run() {
+		// CaseDefaultBrowser.getInstance().work1(MainActivity.this);
+		// }
+		// }, 1000);
+
+		// CaseDecorator.getInstance().work();
+
+		// String str= CaseForJson.assembleMsgIdArrayStr("wangzhengyu");
+		// Log.i("ertewu","str is:"+str);
+	}
+
 }
