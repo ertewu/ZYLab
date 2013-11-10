@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 一边那个xmlns的，一定是我的包名，app的包名，而不能是子包名，刚才我就多加了demo.cases就找不到 -->
+    <com.example.demo.views.CustAttrView
+      xmlns:custAttrs="http://schemas.android.com/apk/res/com.example.demo"
+        android:id="@+id/cust_attr_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custAttrs:location="show_as_action"
+        android:background="#FF0000" />
+
+</LinearLayout>

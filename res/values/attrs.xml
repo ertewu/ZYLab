@@ -1,0 +1,19 @@
+<resources>
+
+    <declare-styleable name="CustAttr" >
+
+        <attr
+            name="location"
+            format="enum" >
+
+            <enum
+                name="show_as_action"
+                value="5" />
+
+            <enum
+                name="show_as_overflow"
+                value="6" />
+        </attr>
+    </declare-styleable>
+
+</resources>
