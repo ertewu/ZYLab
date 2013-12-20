@@ -1,6 +1,7 @@
 package com.example.demo.cases;
 
 import android.content.Context;
+import android.util.Log;
 
 public class CaseForMatrix {
     private static CaseForMatrix sCase;
@@ -22,7 +23,9 @@ public class CaseForMatrix {
         mContext = ctx;
     }
 
-    public void work(){
-//        Test postScale函数
+    public void work() {
+        // postScale函数
+        // mapRect函数
+        Log.i("ertewu", "ertewu1988");
     }
 }
