@@ -4,11 +4,14 @@ import android.app.Activity;
 
 import com.example.demo.cases.CaseForTryFinally;
 
+
 public class CaseInvoke {
     public static void invokeCase(Activity activity) {
 
+
         CaseForTryFinally.obtain().work();
 //        CaseForUri.obtain().work(activity);
+
 //        CaseForNullInvoke.obtain().work();
 
         // CaseForFinal.getInstance(activity).work();
