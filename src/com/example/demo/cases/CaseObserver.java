@@ -21,7 +21,9 @@ public class CaseObserver {
     };
 
     public void work(){
+        //可被观察者
         MyObservable observable=new MyObservable();
+        //两个观察者
         MyObserver observer1=new MyObserver();
         MyObserver observer2=new MyObserver();
         observable.addObserver(observer1);
@@ -34,6 +36,7 @@ public class CaseObserver {
         public void processChange(){
             for(int k=0;k<2;k++){
                 Log.i("ertewu", "MyObservable:"+this.hashCode());
+                //必须调用setChanged，如果不调用notifyObservers不会通知的，可以看源码
                 setChanged();
                 notifyObservers(i);
                 i++;

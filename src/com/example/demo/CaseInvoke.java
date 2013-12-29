@@ -5,41 +5,51 @@ import android.app.Activity;
 import com.example.demo.cases.CaseThreadPriority;
 
 public class CaseInvoke {
-    public static void invokeCase(Activity activity){
+    public static void invokeCase(Activity activity) {
 
         CaseThreadPriority.getInstance(activity).work();
-//        CaseForMath.obtain().work();
+        // CaseForMath.obtain().work();
 
-//        CaseForCustViewAttr.obtain(activity).work();
+        // CaseForCustViewAttr.obtain(activity).work();
 
-//        CaseForFinal.getInstance(activity).work();
-//         CaseForAnim1.getInstance(activity).work();
-//        CaseForAnnotation.getInstance(this).work();
+        // CaseForFinal.getInstance(activity).work();
 
-//             CaseForDraw.getInstance(activity).work();
+        // CaseForTryFinally.obtain().work();
+        // CaseForUri.obtain().work(activity);
 
-            // CaseInterpolator.obtain(this).work();
+        // CaseForNullInvoke.obtain().work();
 
-            // CaseViewConfiguration.obtain(this).work();
+        // CaseForFinal.getInstance(activity).work();
 
-            // CaseBitMask.obtain().work();
+        // CaseForAnim1.getInstance(activity).work();
+        // CaseForAnnotation.getInstance(this).work();
 
-            // CaseForTouch.obtain(this).work4();
+        // CaseForDraw.getInstance(activity).work();
 
-            // CaseExecutor.getInstance().work(0);
+        // CaseForDraw.getInstance(activity).work();
 
-            // CaseObserver.getInstance().work();
+        // CaseInterpolator.obtain(this).work();
 
-            // (new Handler()).postDelayed(new Runnable(){
-            // @Override
-            // public void run() {
-            // CaseDefaultBrowser.getInstance().work1(MainActivity.this);
-            // }
-            // }, 1000);
+        // CaseViewConfiguration.obtain(this).work();
 
-            // CaseDecorator.getInstance().work();
+        // CaseBitMask.obtain().work();
 
-            // String str= CaseForJson.assembleMsgIdArrayStr("wangzhengyu");
-            // Log.i("ertewu","str is:"+str);
+        // CaseForTouch.obtain(this).work4();
+
+        // CaseExecutor.getInstance().work(0);
+
+        // CaseObserver.getInstance().work();
+
+        // (new Handler()).postDelayed(new Runnable(){
+        // @Override
+        // public void run() {
+        // CaseDefaultBrowser.getInstance().work1(MainActivity.this);
+        // }
+        // }, 1000);
+
+        // CaseDecorator.getInstance().work();
+
+        // String str= CaseForJson.assembleMsgIdArrayStr("wangzhengyu");
+        // Log.i("ertewu","str is:"+str);
     }
 }

@@ -5,9 +5,17 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import com.example.demo.R;
 
@@ -31,9 +39,30 @@ public class CaseForDraw {
 
     public void work(){
         mAct.setContentView(new CustView(mAct));
+
+//        testDrawableSetBounds();
     }
 
-    private static class CustView extends View{
+    /**
+     * 测试Drawable的setBounds方法
+     */
+    private void testDrawableSetBounds(){
+        Bitmap motor=BitmapFactory.decodeResource(mAct.getResources(), R.drawable.checkon);
+        Drawable motorDraw=new BitmapDrawable(motor);
+        motorDraw.setBounds(0, 0, 50, 100);
+        ImageView view=new ImageView(mAct);
+        view.setImageDrawable(motorDraw);
+        FrameLayout mLayout=new FrameLayout(mAct);
+        mLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
+        mLayout.addView(view, new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+        FrameLayout.LayoutParams params=(FrameLayout.LayoutParams) view.getLayoutParams();
+        params.gravity=Gravity.CENTER;
+
+        mAct.setContentView(mLayout);
+    }
+
+
+    private static class CustView extends View {
 
         private Paint mTextPaint;
         public CustView(Context context){
@@ -52,14 +81,14 @@ public class CaseForDraw {
         @Override
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
-            drawText(canvas);
-            drawBitmap(canvas);
+//            drawText(canvas);
+//            drawBitmap(canvas);
+            testDrawableBounds2(canvas);
         }
-        
-        
+
         //用TextPaint类画文字，并对比与Paint类相对，这个有什么优势
         private void drawByTextPaint(Canvas canvas){
-        	
+
         }
 
         private void drawText(Canvas canvas){
@@ -93,6 +122,32 @@ public class CaseForDraw {
             canvas.drawBitmap(checkon,372,200,myPaint);
             //这个是作重合的样子，到时我做的那个滑动按钮是有图片重合的
 //            canvas.drawBitmap(checkon,372,220,myPaint);
+        }
+
+        private void testDrawableBounds(Canvas canvas){
+            Bitmap motor=BitmapFactory.decodeResource(getResources(), R.drawable.motor);
+            Drawable motorDraw=new BitmapDrawable(motor);
+            motorDraw.setBounds(0, 0, 160,120);
+            motorDraw.draw(canvas);
+        }
+
+        private void testDrawableBounds2(Canvas canvas){
+            Bitmap motor=BitmapFactory.decodeResource(getResources(), R.drawable.checkon);
+//            motor=Bitmap.createBitmap(motor, 0, 0, motor.getWidth(), 30);
+            Matrix matrix=new Matrix();
+            //从这里看，这个缩放什么的，会完全变形的..
+//            matrix.postScale(1, 3);
+//            matrix.postScale(3, 3);
+            matrix.postScale(0.5f, 0.5f);
+            Log.i("ertewu", "motor 142:"+motor.getWidth()+"|"+motor.getHeight());
+//            Bitmap motor2=Bitmap.createBitmap(motor, 0, 0, motor.getWidth()/2, motor.getHeight()/2, matrix,false);
+//            Bitmap motor2=Bitmap.createBitmap(motor, 0, 0, motor.getWidth(), motor.getHeight(), matrix,false);
+            Bitmap motor2=Bitmap.createBitmap(motor, 0, 0, motor.getWidth(), motor.getHeight(), matrix,false);
+            Log.i("ertewu", "motor 144:"+motor2.getWidth()+"|"+motor2.getHeight());
+
+            canvas.drawBitmap(motor2, matrix, null);
+
+
         }
     }
 
