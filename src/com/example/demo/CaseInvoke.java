@@ -2,15 +2,21 @@ package com.example.demo;
 
 import android.app.Activity;
 
-import com.example.demo.cases.CaseForDraw;
+import com.example.demo.cases.CaseThreadPriority;
 
 public class CaseInvoke {
     public static void invokeCase(Activity activity){
+
+        CaseThreadPriority.getInstance(activity).work();
+//        CaseForMath.obtain().work();
+
+//        CaseForCustViewAttr.obtain(activity).work();
+
 //        CaseForFinal.getInstance(activity).work();
 //         CaseForAnim1.getInstance(activity).work();
 //        CaseForAnnotation.getInstance(this).work();
 
-             CaseForDraw.getInstance(activity).work();
+//             CaseForDraw.getInstance(activity).work();
 
             // CaseInterpolator.obtain(this).work();
 
