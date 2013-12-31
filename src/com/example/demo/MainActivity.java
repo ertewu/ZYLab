@@ -5,17 +5,16 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 
-
 public class MainActivity extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.activity_main);
-		CaseInvoke.invokeCase(this);
-//		Log.i("ertewu", "r16 is:"+getScreenHeight(this)+"|"+getScreenWidth(this));
-	}
-
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        CaseInvoke.invokeCase(this);
+        // setContentView(R.layout.activity_main);
+        // int i=getCombineId(1,138);
+        // Log.i("ertewu","i is:"+i );
+    }
 
     // private static Integer SDK;
     public static int getScreenWidth(Context context) {
