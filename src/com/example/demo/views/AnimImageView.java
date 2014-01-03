@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.views;
 
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
