@@ -6,8 +6,8 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.widget.TextView;
 
-import com.example.demo.AnimImageView;
 import com.example.demo.R;
+import com.example.demo.views.AnimImageView;
 
 /**
  * 这是一个自定义属性动画的案例，还用了一个自定义功能的ImageView,可以在view上方加一个半透明的黑mask <br>

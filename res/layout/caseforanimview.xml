@@ -14,7 +14,7 @@
          >
     </TextView>
 
-    <com.example.demo.AnimImageView
+    <com.example.demo.views.AnimImageView
         android:id="@+id/anim_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
