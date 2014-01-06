@@ -2,13 +2,14 @@ package com.example.demo;
 
 import android.app.Activity;
 
-import com.example.demo.cases.CaseForCustomAnim1;
+import com.example.demo.cases.prepare.CaseShiftOperation;
 
 public class CaseInvoke {
     public static void invokeCase(Activity activity) {
 
-        CaseForCustomAnim1.obtain(activity).work();
-//        CaseThreadPriority.getInstance(activity).work();
+        CaseShiftOperation.obtain(activity).work();
+        // CaseForCustomAnim1.obtain(activity).work();
+        // CaseThreadPriority.getInstance(activity).work();
         // CaseForMath.obtain().work();
 
         // CaseForCustViewAttr.obtain(activity).work();
