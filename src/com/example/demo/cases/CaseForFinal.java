@@ -4,7 +4,7 @@ import java.util.Random;
 
 import android.app.Activity;
 
-import com.util.LogUtils;
+import com.util.LogUtil;
 
 /**
  * Java 编程思想第7章，7.8的例子
@@ -70,7 +70,7 @@ public class CaseForFinal {
     }
 
     private static void log(Object obj){
-        LogUtils.log(obj);
+        LogUtil.log(obj);
     }
 
     // p176
