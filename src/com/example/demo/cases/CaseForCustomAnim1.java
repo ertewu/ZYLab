@@ -32,9 +32,10 @@ public class CaseForCustomAnim1 {
         this.mAct = activity;
     }
 
-    public void work(){
-//        work1();
-        work2();
+    public void work() {
+        // work1();
+        // work2();
+        work3();
     }
 
     public void work1() {
@@ -51,11 +52,23 @@ public class CaseForCustomAnim1 {
         final int RED = 0xffFF8080;
         final int BLUE = 0xff8080FF;
 
-        ValueAnimator colorAnim = ObjectAnimator.ofInt(view, "backgroundColor", RED, BLUE);
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(view, "backgroundColor",
+                RED, BLUE);
         colorAnim.setDuration(3000);
         colorAnim.setEvaluator(new ArgbEvaluator());
         colorAnim.setRepeatCount(ValueAnimator.INFINITE);
         colorAnim.setRepeatMode(ValueAnimator.REVERSE);
         colorAnim.start();
     }
+
+    /**
+     * 这个并不是为了试验AnimImageView的mask黑色的功能，<br>
+     * 而是要试验ImageView的setColorFiler或Drawable的setColorFiler的功能
+     */
+    public void work3() {
+        mAct.setContentView(R.layout.caseforanimview);
+        AnimImageView view = (AnimImageView) mAct.findViewById(R.id.anim_view);
+
+    }
+
 }
