@@ -18,6 +18,15 @@ public class CaseForRegex {
     static String URL_6 = "http://asohu.comb.cn/20140220/n395324798.shtml";
     static String URL_7 = "http://soHu.com.cn/20140220/n395324798.shtml";
 
+    private static CaseForRegex sCase;
+
+    public static CaseForRegex obtain() {
+        if (sCase == null) {
+            sCase = new CaseForRegex();
+        }
+        return sCase;
+    }
+
     public void work() {
         logHostName(URL_1);
         logHostName(URL_2);

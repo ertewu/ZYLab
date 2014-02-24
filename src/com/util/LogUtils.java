@@ -1,5 +1,6 @@
 package com.util;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 public class LogUtils {
@@ -24,6 +25,10 @@ public class LogUtils {
         Log.i("ertewu", msgToPrint);
     }
 
+    public static void printFunctionStack() {
+        printFunctionStack(null);
+    }
+
     /**
      * 这个是意思我不懂为什么是Thread.currentThread.getStackTrace()[3],那0,1,2是做什么的？所以我试一下
      */
@@ -46,7 +51,9 @@ public class LogUtils {
                     logBuilder.append(log);
                 }
             }
-            logBuilder.append(others + "\n");
+            if (!TextUtils.isEmpty(others)) {
+                logBuilder.append(others + "\n");
+            }
             logBuilder.append("PrintStackEnd------------------------\n");
             log(logBuilder.toString());
         }
