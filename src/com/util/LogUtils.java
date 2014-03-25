@@ -2,6 +2,7 @@ package com.util;
 
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MotionEvent;
 
 public class LogUtils {
 
@@ -57,6 +58,25 @@ public class LogUtils {
             logBuilder.append("PrintStackEnd------------------------\n");
             log(logBuilder.toString());
         }
+    }
+    
+    public static String getMotionActionStr(int i){
+        String action="";
+        switch(i){
+        case MotionEvent.ACTION_CANCEL:
+            action+="MotionEvent.ACTION_CANCEL";
+            break;
+        case MotionEvent.ACTION_DOWN:
+            action+="MotionEvent.ACTION_DOWN";
+            break;
+        case MotionEvent.ACTION_UP:
+            action+="MotionEvent.ACTION_UP";
+            break;
+        case MotionEvent.ACTION_MOVE:
+            action+="MotionEvent.ACTION_MOVE";
+            break;
+        }
+        return action;
     }
 
 }

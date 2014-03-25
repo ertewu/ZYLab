@@ -1,6 +1,8 @@
 package com.example.demo.cases;
 
 import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -10,27 +12,29 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.ParcelFileDescriptor;
 import android.util.Log;
 import android.widget.ImageView;
 
 import com.example.demo.R;
 
 
-public class CaseForUri {
+public class CaseForResourceUri {
 
     private final static  String PACKAGE_NAME="com.example.demo";
-    private static CaseForUri sCase;
+    private static CaseForResourceUri sCase;
 
-    public static CaseForUri obtain() {
+    public static CaseForResourceUri obtain() {
         if (sCase == null) {
-            sCase = new CaseForUri();
+            sCase = new CaseForResourceUri();
         }
         return sCase;
     }
 
     public void work(Activity activity) {
-//        showResourceUriDemo(activity);
-        showFileImageUriDemo(activity);
+        // showResourceUriDemo(activity);
+        // showFileImageUriDemo(activity);
+        decodeImageByFileUri(activity);
     }
 
     private void showResourceUriDemo(Activity activity) {
@@ -52,8 +56,43 @@ public class CaseForUri {
         new AlertDialog.Builder(activity).setView(view).create().show();
     }
 
+    private void decodeImageByFileUri(Activity act) {
+        // 这个在drawable的，在这里不行，会有fileNotFound的exception
+        // String uriStr = "android.resource://" + PACKAGE_NAME + "/"
+        // + R.drawable.motor;
+        // 用asset这样的也是出不出来file的，因为在apk打包后，其也不是file了
+        // String uriStr = "file:///android_asset/motor_asset.jpg";
+        // 这个还不行..
+        // String uriStr = "android.resource://" + PACKAGE_NAME + "/"
+        // + R.raw.motor_raw;
+        // 这个还不行啊,raw res/raw res/drawable都用过了，不行啊
+        String uriStr = "android.resource://" + PACKAGE_NAME + "/"
+                + R.raw.motor_raw;
+        Uri uri = Uri.parse(uriStr);
+        try {
+            ParcelFileDescriptor pfd = act.getContentResolver()
+                    .openFileDescriptor(uri, "r");
+            // AssetManager am = act.getAssets();
+            // AssetFileDescriptor afd = am.openFd("motor_asset.jpg");
+            FileDescriptor fd = pfd.getFileDescriptor();
+            // FileDescriptor fd = am.getFileDescriptor();
+
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = false;
+            options.inDither = false;
+            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+            Bitmap b = BitmapFactory.decodeFileDescriptor(fd, null, options);
+
+            ImageView view = new ImageView(act);
+            view.setImageBitmap(b);
+            new AlertDialog.Builder(act).setView(view).create().show();
+        } catch (FileNotFoundException e) {
+            Log.i("ertewu", "exception:" + e.toString());
+        }
+    }
+
     private void showFileImageUriDemo(Activity activity){
-        exportDrawableToFile(activity);
+//        exportDrawableToFile(activity);
         String dirPath=activity.getDir("image", Context.MODE_PRIVATE).getAbsolutePath();
         String filePath=dirPath+"/checkon";
         File file=new File(filePath);

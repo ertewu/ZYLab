@@ -2,12 +2,17 @@ package com.example.demo;
 
 import android.app.Activity;
 
-import com.example.demo.cases.prepare.CaseForViewRootImpl;
+import com.example.demo.cases.net.CaseDownloadActivity;
 
 public class CaseInvoke {
     public static void invokeCase(Activity activity) {
 
-        CaseForViewRootImpl.getInstance(activity).work();
+        CaseDownloadActivity.start(activity);
+        // CaseGson.obtain(activity).work();
+        // CaseBitmapOperate.obtain(activity).work();
+        // CaseForLinkedHashMap.instance(activity).work();
+        // CaseCreateTempFile.showDemo(activity);
+        // CaseForViewRootImpl.getInstance(activity).work();
         // CaseShiftOperation.obtain(activity).work();
         // CaseForCustomAnim1.obtain(activity).work();
         // CaseThreadPriority.getInstance(activity).work();
@@ -18,7 +23,7 @@ public class CaseInvoke {
         // CaseForFinal.getInstance(activity).work();
 
         // CaseForTryFinally.obtain().work();
-        // CaseForUri.obtain().work(activity);
+        // CaseForResourceUri.obtain().work(activity);
 
         // CaseForNullInvoke.obtain().work();
 
