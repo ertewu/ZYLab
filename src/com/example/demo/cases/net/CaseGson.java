@@ -93,7 +93,8 @@ public class CaseGson {
     }
 
     /**
-     * Android API传统方法解析json
+     * Android API传统方法解析json,是以下边的示例参照的<br>
+     * http://blog.csdn.net/love__coder/article/details/6765720
      */
     private void parseJsonTradition(String str) {
         try {

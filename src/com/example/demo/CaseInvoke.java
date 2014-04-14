@@ -2,14 +2,17 @@ package com.example.demo;
 
 import android.app.Activity;
 
+import com.example.demo.cases.CaseSpecialDrawable;
+import com.example.demo.cases.bitmap.CaseBitmapOperate;
 import com.example.demo.cases.net.CaseDownloadActivity;
 
 public class CaseInvoke {
     public static void invokeCase(Activity activity) {
 
-        CaseDownloadActivity.start(activity);
+//        CaseSpecialDrawable.obtain(activity).work();
+//        CaseDownloadActivity.start(activity);
         // CaseGson.obtain(activity).work();
-        // CaseBitmapOperate.obtain(activity).work();
+        CaseBitmapOperate.obtain(activity).work();
         // CaseForLinkedHashMap.instance(activity).work();
         // CaseCreateTempFile.showDemo(activity);
         // CaseForViewRootImpl.getInstance(activity).work();

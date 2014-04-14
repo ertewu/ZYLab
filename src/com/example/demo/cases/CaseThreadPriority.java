@@ -39,7 +39,7 @@ public class CaseThreadPriority {
             public void run() {
                 while (true) {
                     try {
-                        Log.i("wzy",
+                        Log.i("ertewu",
                                 "Thread is living:"
                                         + System.currentTimeMillis());
                         Thread.sleep(100);
