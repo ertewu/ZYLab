@@ -2,16 +2,12 @@ package com.example.demo;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 
 public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         CaseInvoke.invokeCase(this);
-//        char ch='a';
-//        int integer=(int) ch;
-//        Log.i("ertewu", ""+integer);
+        CaseInvoke.invokeCase(this);
     }
 }
