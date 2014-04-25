@@ -7,6 +7,7 @@ import com.example.demo.cases.bitmap.CaseCanvas;
 public class CaseInvoke {
     public static void invokeCase(Activity activity) {
 
+        // CaseJavaContainer.obtain().work();
         CaseCanvas.obtain(activity).work();
         // CaseSpecialDrawable.obtain(activity).work();
         // CaseDownloadActivity.start(activity);

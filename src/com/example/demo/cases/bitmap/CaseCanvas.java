@@ -3,8 +3,10 @@ package com.example.demo.cases.bitmap;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Region.Op;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -60,7 +62,17 @@ public class CaseCanvas {
          * 比如：canvas.save(Canvas.MATRIX_SAVE_FLAG)<br>
          * 以及之间使用的canvas.translate<br>
          * canvas.scale
+         * <p>
+         * 关于Canvas的save与restore用法比较多样，是有点不好理解的，特别是save函数，还有一些flag，理解这些flag是关键。
          *
+         * http://blog.csdn.net/lonelyroamer/article/details/8264189 有些save的解释。
+         * http://developer.android.com/guide/topics/graphics/2d-graphics.html参考
+         *
+         * Canvas一共有下边这几种save flag: <br>
+         * All_SAVE_FLAG ,CLIP_SAVE_FLAG
+         * ,CLIP_TO_LAYER_SAVE_FLAG,FULL_COLOR_LAYER_SAVE_FLAG
+         * ,FULL_COLOR_LAYER_SAVE_FLAG
+         * ,HAS_ALPHA_LAYER_SAVE_FLAG,MATRIX_SAVE_FLAG
          */
         @Override
         protected void onDraw(Canvas canvas) {
@@ -69,8 +81,27 @@ public class CaseCanvas {
             // showDemo2(canvas);
             // testSetBounds(canvas);
             // testCanvasAction(canvas);
+            testClip(canvas);
         }
 
+        // clip与layer这两个使用没学会..
+        /**
+         * http://jimiaotong.blog.163.com/blog/static/189502520119188032938/ <br>
+         * 这个非常好，而且我都试过了
+         */
+        private void testClip(Canvas canvas) {
+            mPaint.setColor(Color.RED);
+            // canvas.save();
+            Rect rect = new Rect(0, 0, 100, 100);
+            Rect mclipRect = new Rect(0, 0, 50, 50);
+            // 将剪切矩形与要下面要画的矩形相交，只显示相交的区域
+            canvas.clipRect(rect);
+            // 将剪切矩形与要下面要画的矩形相交，不显示相交的区域
+            // 我这个没管用啊..
+            canvas.clipRect(mclipRect, Op.XOR);
+            canvas.drawColor(Color.BLUE);
+            // canvas.restore();
+        }
 
         private void testLayer(Canvas canvas) {
 
