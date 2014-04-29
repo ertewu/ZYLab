@@ -2,13 +2,16 @@ package com.example.demo;
 
 import android.app.Activity;
 
-import com.example.demo.cases.bitmap.CaseCanvas;
+import com.example.demo.cases.bitmap.CaseDrawables;
 
 public class CaseInvoke {
+
+    private static String className = null;
     public static void invokeCase(Activity activity) {
 
+        CaseDrawables.obtain(activity).work();
         // CaseJavaContainer.obtain().work();
-        CaseCanvas.obtain(activity).work();
+        // CaseCanvas.obtain(activity).work();
         // CaseSpecialDrawable.obtain(activity).work();
         // CaseDownloadActivity.start(activity);
         // CaseGson.obtain(activity).work();

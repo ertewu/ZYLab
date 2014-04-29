@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<scale xmlns:android="http://schemas.android.com/apk/res/android"
-    android:scaleWidth="50%"
-    android:scaleHeight="50%"
-    android:drawable="@drawable/motor_hdpi" 
-    android:scaleGravity="center_vertical|center_horizontal"
-    >
-</scale>
+<clip xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clipOrientation="vertical"
+    android:drawable="@drawable/motor"
+    android:gravity="center" >
+</clip>
