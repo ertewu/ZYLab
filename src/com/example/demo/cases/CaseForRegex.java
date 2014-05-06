@@ -10,7 +10,7 @@ import android.util.Log;
 
 /**
  * 这个demo的需求是匹配任何包含sohu.com的URL，因为事先已知输入为URL，所以不用判断是否为URL。<br>
- * 
+ *
  */
 public class CaseForRegex {
 
@@ -32,6 +32,11 @@ public class CaseForRegex {
     }
 
     public void work() {
+        // showSohuDemo();
+        showMiDemo();
+    }
+
+    public void showSohuDemo() {
         logHostName(URL_1);
         logHostName(URL_2);
         logHostName(URL_3);
@@ -39,6 +44,19 @@ public class CaseForRegex {
         logHostName(URL_5);
         logHostName(URL_6);
         logHostName(URL_7);
+    }
+
+    public void showMiDemo() {
+        final String[] caseList = new String[] { "xiaomi", "XiaoMi",
+                "wzyXiaomi", "wzyXiaomiNihao", "wzyXiamiNiHAO" };
+        // 这个是不能区分大小写的
+        // final String regexMi = "(.*)xiaomi(.*)";
+        // 这个能区分大小写的：http://blog.csdn.net/iwanttoknow7/article/details/5773285
+        final String regexMi = "(.*)(?i)xiaomi(.*)";
+        for (String item : caseList) {
+            Log.i("ertewu", "" + item.matches(regexMi));
+        }
+
     }
 
     private void logHostName(String urlstr) {
@@ -67,7 +85,7 @@ public class CaseForRegex {
      * w表示[a-zA-Z0-9]这样的单个字符，显示这个缺少下划线这样的重量级字符<br>
      * +表示至少有一个前边的正则表达式<br>
      * ?表示0个或一个前边的正则表达式<br>
-     * 
+     *
      * 显示 isSohu1比 isSohu2,isSohu3 所匹配的集合更少了..如果isSohu2还能实现功能的话，isSohu1估计够呛了..
      * 关于java里用正则要好多斜杠的问题，是怎么回事?
      */
@@ -85,7 +103,7 @@ public class CaseForRegex {
      * '*'表示0个或多个前边的正则表达式<br>
      * 那么其实 '.*' 匹配了任何不带有\n的字符串 <br>
      * '.*\\. '其实匹配了任何尾是.的不带有\n的字符串<br>
-     * 
+     *
      * 那么其实isSohu2这个函数，是比isSohu3所包含的集合要少的
      */
     private boolean isSohu2(String host) {
