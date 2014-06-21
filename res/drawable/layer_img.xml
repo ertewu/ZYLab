@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+整个drawable的大小竟然是木桶的，以最小的图片的大小为主，比如maxLevel如果是android_icon的话，
+那这个drawable非常非常小 ,level0没有任何东西，所以不设level时就是level0，那时什么东西都不显示..
+-->
+<level-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:drawable="@drawable/black_widow"
+        android:maxLevel="1"/>
+    <item
+        android:drawable="@drawable/motor"
+        android:maxLevel="2"/>
+    <item
+        android:drawable="@drawable/hulk"
+        android:maxLevel="3"/>
+
+</level-list>

@@ -1,17 +1,29 @@
 package com.example.demo;
 
-import com.example.demo.cases.custview.CaseDecorMeasureInfo;
-
 import android.app.Activity;
+
+import com.example.demo.cases.CaseForRegex;
+import com.example.demo.cases.custview.CaseDecorMeasureInfo;
 
 public class CaseInvoke {
     public static void invokeCase(Activity activity) {
 
         CaseDecorMeasureInfo.instance(activity).work();
+        CaseForRegex.obtain().work();
+        // CaseDrawables.obtain(activity).work();
+        // CaseJavaContainer.obtain().work();
+        // CaseCanvas.obtain(activity).work();
+        // CaseSpecialDrawable.obtain(activity).work();
+        // CaseDownloadActivity.start(activity);
+        // CaseGson.obtain(activity).work();
+        // CaseBitmapOperate.obtain(activity).work();
+        // CaseForLinkedHashMap.instance(activity).work();
+        // CaseCreateTempFile.showDemo(activity);
+        // CaseForViewRootImpl.getInstance(activity).work();
         // CaseShiftOperation.obtain(activity).work();
         // CaseForCustomAnim1.obtain(activity).work();
         // CaseThreadPriority.getInstance(activity).work();
-//        CaseThreadJoin.getInstance(activity).work();
+        // CaseThreadJoin.getInstance(activity).work();
         // CaseForMath.obtain().work();
 
         // CaseForCustViewAttr.obtain(activity).work();
@@ -19,7 +31,7 @@ public class CaseInvoke {
         // CaseForFinal.getInstance(activity).work();
 
         // CaseForTryFinally.obtain().work();
-        // CaseForUri.obtain().work(activity);
+        // CaseForResourceUri.obtain().work(activity);
 
         // CaseForNullInvoke.obtain().work();
 
