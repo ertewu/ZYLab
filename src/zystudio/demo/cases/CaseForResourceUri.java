@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import zystudio.demo.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -16,12 +17,10 @@ import android.os.ParcelFileDescriptor;
 import android.util.Log;
 import android.widget.ImageView;
 
-import zystudio.demo.R;
-
 
 public class CaseForResourceUri {
 
-    private final static  String PACKAGE_NAME="com.example.demo";
+    private final static String PACKAGE_NAME = "zystudio.demo";
     private static CaseForResourceUri sCase;
 
     public static CaseForResourceUri obtain() {
@@ -47,7 +46,7 @@ public class CaseForResourceUri {
         // "/drawable/motor";
 
         Uri uri = Uri.parse(uriStr);
-        // 通过log打出,authority是com.example.demo，scheme是android.resource
+        // 通过log打出,authority是zystudio.demo，scheme是android.resource
         // 而toString 就是我拼的那个字符串
         Log.i("ertewu", "r35:" + uri.getAuthority() + "|" + uri.getScheme()
                 + "|" + uri.toString());
