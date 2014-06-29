@@ -1,0 +1,6 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:state_pressed="false" 
+		android:drawable="@drawable/menu_skin" />
+	<item android:state_pressed="true" 
+		android:drawable="@drawable/menu_skin_pressed" />
+</selector>
