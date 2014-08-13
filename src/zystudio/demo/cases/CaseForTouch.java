@@ -1,5 +1,6 @@
 package zystudio.demo.cases;
 
+import zystudio.demo.R;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
@@ -11,8 +12,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import zystudio.demo.R;
-
+/**
+ * 我记得这个Case是用来试探多点触摸的..
+ * 
+ */
 public class CaseForTouch  {
 
     private static CaseForTouch sCase;
