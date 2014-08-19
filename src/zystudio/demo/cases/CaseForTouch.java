@@ -32,9 +32,9 @@ public class CaseForTouch  {
 
     public void work() {
         mAct.setContentView(R.layout.casefortouch);
-         RelativeLayout ll=(RelativeLayout)
+        RelativeLayout rl = (RelativeLayout)
          mAct.findViewById(R.id.casetouch_rl);
-         ll.setOnTouchListener(new OnTouchListener() {
+        rl.setOnTouchListener(new OnTouchListener() {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {

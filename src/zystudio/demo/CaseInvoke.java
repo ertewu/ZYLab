@@ -1,15 +1,17 @@
 package zystudio.demo;
 
-import zystudio.demo.cases.CaseForRegex;
-import zystudio.demo.cases.custview.CaseDecorMeasureInfo;
+import zystudio.demo.cases.reflect.CaseInvokeFinalStatic;
 import android.app.Activity;
 
 
 public class CaseInvoke {
     public static void invokeCase(Activity activity) {
 
-        CaseDecorMeasureInfo.instance(activity).work();
-        CaseForRegex.obtain().work();
+        CaseInvokeFinalStatic.obtain().work();
+        // CaseTrigger.obtain(activity).work();
+        // CaseLikeEscape.obtain(activity).work();
+        // CaseDecorMeasureInfo.instance(activity).work();
+        // CaseForRegex.obtain().work();
         // CaseDrawables.obtain(activity).work();
         // CaseJavaContainer.obtain().work();
         // CaseCanvas.obtain(activity).work();
