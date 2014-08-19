@@ -1,0 +1,12 @@
+<zystudio.demo.views.TestTouchLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/casetouch2_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <zystudio.demo.views.TestTouchView
+        android:id="@+id/casetouch2_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</zystudio.demo.views.TestTouchLayout>
