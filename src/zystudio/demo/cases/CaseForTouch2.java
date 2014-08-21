@@ -18,7 +18,7 @@ import android.app.Activity;
  * 一些已经确认的东西是父ViewGroup的dispatchTouchEvent一定是最先调用的，以这个为基础作case<br>
  * 父view的onTouchEvent是在子View的onTouchEvent之后调用的，其受到子view的onTouchEvent影响<br>
  * 每一次的起始都以父view的down为起点<br>
- * 
+ *
  * ======== 通过大量的实验，我发现这个touch的可能性非常多，若要列出来，是不可穷尽的。但是这个例子已经足够。
  * 要理解这个touch事件，只能在保证其它不变的情况下，让某一个return 之类的改变，才能看到这个return带来的效果。就是这样
  */
@@ -53,6 +53,12 @@ public class CaseForTouch2 {
     private void setParentLayout() {
         // mLayout.mAllowOnTouchCustom = true;
         // mLayout.mOnTouchReturnValue = true;
+
+        // mLayout.mIsAllowCustomDispatch = true;
+        // mLayout.mDispatchReturnValue = true;
+
+        // mLayout.mAllowInterruptCustom = true;
+        // mLayout.mOnInterruptReturnValue = true;
     }
 
     private void setChildLayout() {

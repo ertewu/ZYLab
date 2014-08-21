@@ -1,4 +1,4 @@
-package zystudio.demo.cases.custview;
+package zystudio.demo.cases;
 
 import zystudio.demo.R;
 import android.app.Activity;
