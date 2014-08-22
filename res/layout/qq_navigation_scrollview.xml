@@ -4,15 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <ScrollView
+    <zystudio.demo.CustScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
+        
             <zystudio.demo.NavigationItemView
                 android:id="@+id/itemview_1"
                 android:layout_width="match_parent"
@@ -30,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
             </zystudio.demo.NavigationItemView>
-        </LinearLayout>
-    </ScrollView>
+
+    </zystudio.demo.CustScrollView>
 
 </LinearLayout>
