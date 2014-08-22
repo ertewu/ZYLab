@@ -49,7 +49,12 @@ public class CustScrollView extends ViewGroup implements OnGestureListener {
         for (int i = 0; i < count; i++) {
             View child = getChildAt(i);
             ViewGroup.LayoutParams lp = child.getLayoutParams();
-            child.measure(widthMeasureSpec, heightMeasureSpec);
+            final int childWidthMeasureSpec = getChildMeasureSpec(
+                    widthMeasureSpec, 0, lp.width);
+            final int childHeightMeasureSpec = getChildMeasureSpec(
+                    heightMeasureSpec, 0, lp.height);
+
+            child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
         }
         // setMeasuredDimen用系统的方法..
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
