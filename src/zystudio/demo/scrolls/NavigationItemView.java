@@ -1,5 +1,6 @@
-package zystudio.demo;
+package zystudio.demo.scrolls;
 
+import zystudio.demo.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;

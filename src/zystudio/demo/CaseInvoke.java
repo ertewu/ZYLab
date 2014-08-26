@@ -1,14 +1,15 @@
 package zystudio.demo;
 
-import zystudio.demo.cases.CaseForTouch2;
+import zystudio.demo.scrolls.CaseScrolls;
 import android.app.Activity;
 
 public class CaseInvoke {
     public static void invokeCase(Activity activity) {
+        CaseScrolls.obtain(activity).work();
         // CaseInvokeFinalStatic.obtain().work();
         // CaseTrigger.obtain(activity).work();
         // CaseLikeEscape.obtain(activity).work();
-        CaseForTouch2.obtain(activity).work();
+        // CaseForTouch2.obtain(activity).work();
         // CaseDecorMeasureInfo.instance(activity).work();
         // CaseForRegex.obtain().work();
         // CaseDrawables.obtain(activity).work();

@@ -4,28 +4,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <zystudio.demo.CustScrollView
+    <zystudio.demo.scrolls.MyLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
         
-            <zystudio.demo.NavigationItemView
+            <zystudio.demo.scrolls.NavigationItemView
                 android:id="@+id/itemview_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
-            </zystudio.demo.NavigationItemView>
+            </zystudio.demo.scrolls.NavigationItemView>
 
-            <zystudio.demo.NavigationItemView
+            <zystudio.demo.scrolls.NavigationItemView
                 android:id="@+id/itemview_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
-            </zystudio.demo.NavigationItemView>
+            </zystudio.demo.scrolls.NavigationItemView>
 
-            <zystudio.demo.NavigationItemView
+            <zystudio.demo.scrolls.NavigationItemView
                 android:id="@+id/itemview_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
-            </zystudio.demo.NavigationItemView>
+            </zystudio.demo.scrolls.NavigationItemView>
 
-    </zystudio.demo.CustScrollView>
+    </zystudio.demo.scrolls.MyLinearLayout>
 
 </LinearLayout>

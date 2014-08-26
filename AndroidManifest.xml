@@ -50,6 +50,9 @@
             android:name=".cases.net.CaseDownloadActivity" 
             android:label="@string/app_name">
         </activity>
+                <activity
+            android:name=".scrolls.CaseShowScrollActivity" 
+            android:label="@string/scroll_case">
+        </activity>        
     </application>
-
 </manifest>
