@@ -19,6 +19,8 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
     private GestureDetector mGestureDetector;
     private int mTouchSlopY;
     private int mAllChildHeight;
+    private int mMinFlingVelocity;
+    private int mMaxFlingVelocity;
 
     public QQNavigationLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -31,6 +33,8 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
         mGestureDetector = new GestureDetector(getContext(), this);
         final ViewConfiguration config = ViewConfiguration.get(context);
         mTouchSlopY = config.getScaledTouchSlop();
+        mMinFlingVelocity = config.getScaledMinimumFlingVelocity();
+        mMaxFlingVelocity = config.getScaledMaximumFlingVelocity();
     }
 
     @Override
@@ -104,23 +108,6 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
     }
 
     @Override
-    public boolean onDown(MotionEvent e) {
-        LogUtil.log("onDown occured");
-        return false;
-    }
-
-    @Override
-    public void onShowPress(MotionEvent e) {
-        LogUtil.log("onShowPress occured");
-    }
-
-    @Override
-    public boolean onSingleTapUp(MotionEvent e) {
-        LogUtil.log("onSingleTapUp occured");
-        return false;
-    }
-
-    @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
             float distanceY) {
         LogUtil.log("onScroll occured");
@@ -143,12 +130,12 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
 
         int distanceToScroll = distanceY;
         if (distanceToScroll > 0) {
-            //大于0是往上滑的
+            // 大于0是往上滑的
             if (currentScrollY + distanceY > MAX_SCROLLY) {
                 distanceToScroll = MAX_SCROLLY - currentScrollY;
             }
         } else if (distanceToScroll < 0) {
-            //小于0是往下滑的
+            // 小于0是往下滑的
             if (currentScrollY + distanceY < MIN_SCROLLY) {
                 distanceToScroll = MIN_SCROLLY - currentScrollY;
             }
@@ -161,17 +148,42 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
         return false;
     }
 
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+            float velocityY) {
+        LogUtil.log("onFling occured");
+        if (Math.abs(velocityY) > mMinFlingVelocity) {
+            mScroller.fling(getScrollX(), getScrollY(), 0, (int) -velocityY, 0,
+                    0, 0,
+                    mAllChildHeight - getHeight());
+            postInvalidateOnAnimation();
+            return true;
+        } else {
+            // 这个else是什么情况的说..
+        }
+        return false;
+    }
 
+    /********************************** 底下这些垃圾回调都没什么用.. *****************************/
     @Override
     public void onLongPress(MotionEvent e) {
         LogUtil.log("onLongPress occured");
     }
 
     @Override
-    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-            float velocityY) {
-        LogUtil.log("onFling occured");
+    public boolean onDown(MotionEvent e) {
+        LogUtil.log("onDown occured");
         return false;
     }
 
+    @Override
+    public void onShowPress(MotionEvent e) {
+        LogUtil.log("onShowPress occured");
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent e) {
+        LogUtil.log("onSingleTapUp occured");
+        return false;
+    }
 }

@@ -47,6 +47,7 @@ public class CaseShowScrollActivity extends Activity {
 
     private void showQQNavigationLayout() {
         setContentView(R.layout.qqnavigation_layout);
+        QQNavigationLayout layout = (QQNavigationLayout) findViewById(R.id.qq_navigation);
         NavigationItemView v1 = (NavigationItemView) findViewById(R.id.itemview_1);
         v1.setTitle("Title 0");
         v1.setImageViewHeight(100);
@@ -61,6 +62,12 @@ public class CaseShowScrollActivity extends Activity {
         v3.setTitle("Title 2");
         v3.setImageViewHeight(1000);
         v3.setImageViewColor(android.graphics.Color.GREEN);
+
+        // 刚才在这里发现v4中的ImageView有1000的高，但是v4只有690的全屏高，说明NavigationItemView没做好..
+        NavigationItemView v4 = (NavigationItemView) findViewById(R.id.itemview_4);
+        v4.setTitle("Title 3");
+        v4.setImageViewHeight(900);
+        v4.setImageViewColor(android.graphics.Color.RED);
     }
 
     private void showOverScrollView() {

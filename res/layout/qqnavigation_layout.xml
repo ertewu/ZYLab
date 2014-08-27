@@ -5,6 +5,7 @@
     android:orientation="vertical" >
 
     <zystudio.demo.scrolls.QQNavigationLayout
+        android:id="@+id/qq_navigation"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
         
@@ -22,6 +23,12 @@
 
             <zystudio.demo.scrolls.NavigationItemView
                 android:id="@+id/itemview_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </zystudio.demo.scrolls.NavigationItemView>
+            
+                        <zystudio.demo.scrolls.NavigationItemView
+                android:id="@+id/itemview_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
             </zystudio.demo.scrolls.NavigationItemView>
