@@ -19,8 +19,9 @@ public class CaseShowScrollActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        showViewConfigurationParams();
-        showOverScrollView();
+        showQQNavigationLayout();
+        // showViewConfigurationParams();
+        // showOverScrollView();
         // showMyLinearLayout();
         // showMyScrollView();
     }
@@ -42,6 +43,24 @@ public class CaseShowScrollActivity extends Activity {
                 + mMaximumVelocity + "|" + mOverscrollDistance + "|"
                 + mOverflingDistance + "|" + friction + "|" + mPhysicalCoeff;
         LogUtil.log(str);
+    }
+
+    private void showQQNavigationLayout() {
+        setContentView(R.layout.qqnavigation_layout);
+        NavigationItemView v1 = (NavigationItemView) findViewById(R.id.itemview_1);
+        v1.setTitle("Title 0");
+        v1.setImageViewHeight(100);
+        v1.setImageViewColor(android.graphics.Color.YELLOW);
+
+        NavigationItemView v2 = (NavigationItemView) findViewById(R.id.itemview_2);
+        v2.setTitle("Title 1");
+        v2.setImageViewHeight(150);
+        v2.setImageViewColor(android.graphics.Color.BLUE);
+
+        NavigationItemView v3 = (NavigationItemView) findViewById(R.id.itemview_3);
+        v3.setTitle("Title 2");
+        v3.setImageViewHeight(1000);
+        v3.setImageViewColor(android.graphics.Color.GREEN);
     }
 
     private void showOverScrollView() {
@@ -79,12 +98,12 @@ public class CaseShowScrollActivity extends Activity {
         v3.setImageViewColor(android.graphics.Color.GREEN);
     }
 
-    private void showListView() {
-        setContentView(R.layout.qq_navigation);
-        mListView = (ListView) findViewById(R.id.navigation);
-        mAdapter = new MyListAdapter();
-        mListView.setAdapter(mAdapter);
-    }
+    // private void showListView() {
+    // setContentView(R.layout.qq_navigation);
+    // mListView = (ListView) findViewById(R.id.navigation);
+    // mAdapter = new MyListAdapter();
+    // mListView.setAdapter(mAdapter);
+    // }
 
     private class MyListAdapter extends BaseAdapter {
 

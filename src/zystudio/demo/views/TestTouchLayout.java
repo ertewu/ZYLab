@@ -44,6 +44,7 @@ public class TestTouchLayout extends FrameLayout {
         if (mAllowInterruptCustom) {
             result = mOnInterruptReturnValue;
         }
+
         LogUtil.log("TestTouchLayout-onInterruptTouchEvent:" + ScreenUtil.getMotionActionStr(ev.getAction())
                 + "|result is:" + result);
         return result;
