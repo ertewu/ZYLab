@@ -17,6 +17,7 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
     private Scroller mScroller;
     private Context mContext;
     private GestureDetector mGestureDetector;
+    // 这个值在i9100上是12
     private int mTouchSlopY;
     private int mAllChildHeight;
     private int mMinFlingVelocity;
@@ -78,6 +79,12 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
         }
         boolean result = super.onTouchEvent(event);
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            if (!mScroller.isFinished()) {
+                // 这个是为了在按下时，finish
+                // fling的动作，虽然注释上说abortAnimation与forceFinished是相反的，但在我这里好像都能起到一样的作用
+                // mScroller.abortAnimation();
+                mScroller.forceFinished(true);
+            }
             result = true;
         }
         return result;
@@ -111,7 +118,9 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
             float distanceY) {
         LogUtil.log("onScroll occured");
-        if (Math.abs(distanceY) > mTouchSlopY) {
+        // 没想到这个mTouchSlopY还挺大的，很多scroll都走不了
+        // if (Math.abs(distanceY) > mTouchSlopY) {
+        if (Math.abs(distanceY) > 0) {
             return scrollPiece((int) distanceY);
         }
         return false;
@@ -154,8 +163,7 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
         LogUtil.log("onFling occured");
         if (Math.abs(velocityY) > mMinFlingVelocity) {
             mScroller.fling(getScrollX(), getScrollY(), 0, (int) -velocityY, 0,
-                    0, 0,
-                    mAllChildHeight - getHeight());
+                    0, 0, mAllChildHeight - getHeight());
             postInvalidateOnAnimation();
             return true;
         } else {
