@@ -175,6 +175,22 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
         return false;
     }
 
+    public void scrollChildToTop(View childView) {
+        // 只有是last的时候才有这个问题
+        // if (childView.getHeight() < getHeight()) {
+        // throw new IllegalStateException(
+        // "Error the child short than its parent,How to scroll to TOP!");
+        // }
+        //
+        int location[] = new int[2];
+        childView.getLocationInWindow(location);
+        LogUtil.log("scrollY is:" + location[1]);
+        // 38是我i9100的通知栏的高度
+        mScroller.startScroll(0, getScrollY(), 0, location[1] - 38,
+                500);
+        postInvalidateOnAnimation();
+    }
+
     /********************************** 底下这些垃圾回调都没什么用.. *****************************/
     @Override
     public void onLongPress(MotionEvent e) {

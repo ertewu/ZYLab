@@ -36,6 +36,20 @@ public class NavigationItemView extends LinearLayout {
                     mImageView.setVisibility(View.GONE);
                 } else {
                     mImageView.setVisibility(View.VISIBLE);
+                    if (getParent() instanceof QQNavigationLayout) {
+                        getHandler().postDelayed(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                QQNavigationLayout parent = (QQNavigationLayout) getParent();
+                                try {
+                                    parent.scrollChildToTop(NavigationItemView.this);
+                                } catch (Exception o) {
+
+                                }
+                            }
+                        }, 200);
+                    }
                 }
             }
         });
