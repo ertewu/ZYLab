@@ -40,10 +40,18 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        String widthStr = ScreenUtil.getMeasureSpecInfo(widthMeasureSpec);
+        String heightStr = ScreenUtil.getMeasureSpecInfo(heightMeasureSpec);
+        // i9100上竟然width与height都是exactly,480,690..
+        LogUtil.log("QQNavigationLayout onMeasure:" + widthStr + "|"
+                + heightStr);
         int count = getChildCount();
         for (int i = 0; i < count; i++) {
             View child = getChildAt(i);
             ViewGroup.LayoutParams lp = child.getLayoutParams();
+            // 这里输出的都是-1,-2,即width为match_parent,height为wrap_content
+            LogUtil.log("QQNavigationLayout onMeasure item:" + lp.width + "|"
+                    + lp.height);
             final int childWidthMeasureSpec = getChildMeasureSpec(
                     widthMeasureSpec, 0, lp.width);
             final int childHeightMeasureSpec = getChildMeasureSpec(
@@ -51,7 +59,7 @@ public class QQNavigationLayout extends ViewGroup implements OnGestureListener {
 
             child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
         }
-        // setMeasuredDimen用系统的方法..
+        // setMeasuredDimen用系统的方法，super.onMeasure也就是viewgroup的onMeausre，只有setMeasuredDimen这一个方法调用
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
