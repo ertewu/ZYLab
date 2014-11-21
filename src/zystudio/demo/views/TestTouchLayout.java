@@ -9,8 +9,8 @@ import android.widget.FrameLayout;
 
 public class TestTouchLayout extends FrameLayout {
 
-    public boolean mIsAllowCustomDispatch = false;
-    public boolean mDispatchReturnValue = false;
+    public boolean mIsAllowCustomDispatch = true;
+    public boolean mDispatchReturnValue = true;
 
     public boolean mAllowInterruptCustom = false;
     public boolean mOnInterruptReturnValue = false;

@@ -51,7 +51,7 @@
             android:label="@string/app_name">
         </activity>
                 <activity
-            android:name=".scrolls.CaseShowScrollActivity" 
+            android:name="zystudio.demo.fakeqqnavigation.CaseShowScrollActivity" 
             android:label="@string/scroll_case">
         </activity>        
     </application>

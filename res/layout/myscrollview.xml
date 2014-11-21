@@ -4,16 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <zystudio.demo.scrolls.MyScrollView
+    <zystudio.demo.fakeqqnavigation.MyScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
         
-            <zystudio.demo.scrolls.NavigationItemView
+            <zystudio.demo.fakeqqnavigation.NavigationItemView
                 android:id="@+id/itemview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
-            </zystudio.demo.scrolls.NavigationItemView>
+            </zystudio.demo.fakeqqnavigation.NavigationItemView>
 
-    </zystudio.demo.scrolls.MyScrollView>
+    </zystudio.demo.fakeqqnavigation.MyScrollView>
 
 </LinearLayout>

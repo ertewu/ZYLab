@@ -4,6 +4,14 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
+
+
+    <!--
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustAttr="http://schemas.android.com/apk/res/zystudio.demo"
+    http://stackoverflow.com/questions/6860886/custom-attributes-in-styles-xml
+    上边说要想使用自定义属性，不能在styles中写自定诉的namespace 
+    -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
@@ -15,6 +23,12 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="CustAttrViewStyle">
+        <!-- 自定义属性location前边并没有CustAttr，有反而错了 -->
+        <item name="location">show_as_action</item>
+        <item name="android:background">#FF0000</item>
     </style>
 
 </resources>
