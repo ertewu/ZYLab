@@ -1,12 +1,15 @@
 package zystudio.demo;
 
-import zystudio.cases.graphics.touch.CaseForTouch2;
+import zystudio.cases.javabase.CaseJavaRandom;
 import android.app.Activity;
 
 public class CaseInvoke {
     public static void invokeCase(Activity activity) {
-//        CaseForCustViewAttr.obtain(activity).work();
-//        CaseThreadJoin.obtain().work();
+        CaseJavaRandom.obtain().work();
+//        CaseDeepCopy.obtain().work();
+//        CaseShallowCopy.obtain().work();
+        // CaseForCustViewAttr.obtain(activity).work();
+        // CaseThreadJoin.obtain().work();
         // CaseURLEncoder.obtain().work();
         // CaseBase64.obtain().work();
         // CaseMD5Digest.obtain().work();
@@ -14,7 +17,7 @@ public class CaseInvoke {
         // CaseInvokeFinalStatic.obtain().work();
         // CaseTrigger.obtain(activity).work();
         // CaseLikeEscape.obtain(activity).work();
-         CaseForTouch2.obtain(activity).work();
+        // CaseForTouch2.obtain(activity).work();
         // CaseDecorMeasureInfo.instance(activity).work();
         // CaseForRegex.obtain().work();
         // CaseDrawables.obtain(activity).work();

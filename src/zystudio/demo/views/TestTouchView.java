@@ -11,8 +11,8 @@ public class TestTouchView extends ImageView {
     public boolean mAllowCustomDispatch = false;
     public boolean mDispatchReturnValue = false;
 
-    public boolean mAllowCustomOnTouch = false;
-    public boolean mOnTouchReturnValue = false;
+    public boolean mAllowCustomOnTouch = true;
+    public boolean mOnTouchReturnValue = true;
 
     public TestTouchView(Context context, AttributeSet attrs) {
         super(context, attrs);
