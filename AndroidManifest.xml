@@ -54,5 +54,19 @@
             android:name="zystudio.demo.fakeqqnavigation.CaseShowScrollActivity" 
             android:label="@string/scroll_case">
         </activity>        
+        
+         <receiver
+            android:name=".ScreenReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+             <intent-filter>
+                <action android:name="android.intent.action.SCREEN_ON" />
+            </intent-filter>
+               <intent-filter>
+                <action android:name="android.intent.action.SCREEN_OFF" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

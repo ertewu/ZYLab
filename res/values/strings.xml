@@ -4,5 +4,7 @@
     <string name="app_name">Demo</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-<string name="scroll_case">Scrolls</string>
+    <string name="scroll_case">Scrolls</string>
+    <string name="novel_offline_progress">已离线%d%%</string>
+
 </resources>

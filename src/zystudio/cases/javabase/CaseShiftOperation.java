@@ -1,7 +1,7 @@
 package zystudio.cases.javabase;
 
+import zystudio.mylib.utils.LogUtil;
 import android.content.Context;
-import android.util.Log;
 import android.view.View.MeasureSpec;
 
 /**
@@ -11,12 +11,21 @@ import android.view.View.MeasureSpec;
  * <<是左移：左移的规则是 丢弃最高位，0补最低位;就是说，即使最高位是符号位，也要舍弃
  *
  * <li>
- * >>是右移:右移的规则是：低位舍弃，高位的空位补符号位；也就是如果符号位是0的话，那就补0,符号位是1的话，那就补1；
+ * >>是带符号右移:右移的规则是：低位舍弃，高位的空位补符号位；也就是如果符号位是0的话，那就补0,符号位是1的话，那就补1；
  * <li>
- * >>>是无符号右移：
+ * >>>是无符号右移：是用zero extension的，和>>是对应的,高位是０补全的，低位舍弃
  * </ul>
+ * <p>
+ * 通过Java编程思想，我发现左移是没有所谓的无符号，有符号这分类的，但是右移分为带符号右移和无符号右移的...
+ * Shift Operators里边还有实验的,
+ * </p>
  * </p>当然这些东西都是针对于二进制的，所有的数都得先转为二进制 <br>
  * Refer From: http://java.chinaitlab.com/base/828314.html
+ * <p>
+ * 这里再补充一下关于Java里整数的计算机存储形式的知识，否则看上去还模模糊糊的：
+ * Java 的int类型二进制是以补码形式存储的，可以看Ｔhinking in java中Shift Operators的例子：
+ * 即-1的二进制表示字符串是:1111   1111   1111   1111   1111   1111   1111     1111
+ * </p>
  */
 public class CaseShiftOperation {
 
@@ -34,7 +43,11 @@ public class CaseShiftOperation {
     }
 
     public void work(){
-//        colorShiftDemo();
+        //这三个函数对于显示二进制，十进制，十六进制很好用..
+//        Integer.toBinaryString(i)
+//        Integer.toHexString(i)
+//        Integer.toOctalString();
+        colorShiftDemo();
         bitShiftMeasureDemo();
     }
 
@@ -48,7 +61,8 @@ public class CaseShiftOperation {
         int multiplyValue = color * 0x01000000;
 
         // 这两个值是一样的,这个打出来的是10进制的数
-        Log.i("ertewu", "r28:" + leftshiftValue + "|" + multiplyValue);
+        LogUtil.log("r28:" + leftshiftValue + "|" + multiplyValue);
+        LogUtil.log("r29 binary str:" +Integer.toBinaryString( leftshiftValue) + "|" +Integer.toBinaryString(multiplyValue));
     }
 
     /**
@@ -70,14 +84,14 @@ public class CaseShiftOperation {
     public void bitShiftMeasureDemo() {
          MeasureSpec.makeMeasureSpec(0, MeasureSpec.AT_MOST);
         // 这个就是-2^30，0x11左移30位后，符号位为1,最高数据位为1且后边有30个0
-        Log.i("ertewu", "MODE_MASK:" + MODE_MASK + "\n");
+        LogUtil.log( "MODE_MASK:" + MODE_MASK + "\n");
         // 这个就是0啦，左移肯定都是0
-        Log.i("ertewu", "UNSPECIFIED:" + UNSPECIFIED + "\n");
+        LogUtil.log( "UNSPECIFIED:" + UNSPECIFIED + "\n");
         // 这个就是正的2^30啦，完全能理解
-        Log.i("ertewu", "EXACTLY:" + EXACTLY + "\n");
+        LogUtil.log( "EXACTLY:" + EXACTLY + "\n");
         // 这个就不好理解了，这个符号为是1,除此之后都是0了，但是这个数据是2^31，这也就是传说中的最高位省略
-        Log.i("ertewu", "AT_MOST:" + AT_MOST + "\n");
-        Log.i("ertewu", "---------------------------");
+        LogUtil.log( "AT_MOST:" + AT_MOST + "\n");
+        LogUtil.log( "---------------------------");
     }
 
     /** 那个这个并非shift方面的，这个是看到MeasureSpec的MODE_MASK这个字段，想了解一下使用方法*/
