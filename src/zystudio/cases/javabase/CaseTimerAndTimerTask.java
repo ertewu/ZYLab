@@ -28,8 +28,14 @@ public class CaseTimerAndTimerTask {
         try {
             TimerTask mTimerTask = new MyTimerTask();
             Timer timer = new Timer(true);
-            timer.scheduleAtFixedRate(mTimerTask, 0, 10 * 1000);
-            LogUtil.log("TimerTask started:Thread:"+Thread.currentThread().getName()+"|"+new Date());
+//            timer.scheduleAtFixedRate(mTimerTask, 0, 10 * 1000);
+            /**
+             * 第三个参数的意思是两次ＴimerTask begin的间隔，但是比如底下的task，如果sleep超过了这个7000,那两次begin的间隔也会变长的
+             * 注意是两次timerTask begin的间隔，而不是上次timerTask end与上次timerTask begin的间隔，
+             * 这个Timer不cancel的话,timerTask会一直反复下去的
+             */
+            timer.schedule(mTimerTask, 0, 7000);
+            LogUtil.log("TimerTask launch:Thread:"+Thread.currentThread().getName()+"|"+new Date());
             Thread.sleep(120000);
             timer.cancel();
             LogUtil.log("TimerTask canceled");
@@ -44,11 +50,11 @@ public class CaseTimerAndTimerTask {
         @Override
         public void run() {
             try {
-                LogUtil.log("TimerTask start at:" + new Date()+"|Thread:"+Thread.currentThread().getName()+","+Thread.currentThread().getId());
+                LogUtil.log("TimerTask begin at:" + new Date()+"|Thread:"+Thread.currentThread().getName()+","+Thread.currentThread().getId());
                 //可以看到这个2w比上边的10*1000时间更长,于是上边的10*1000的rate就不行了,得按2w的这个rate走
                 //当然如果去掉这个2w的话,就是按10000的频率固定拉起这个线程的
-                Thread.sleep(20000);
-                LogUtil.log("TimerTask end at:" + new Date());
+                Thread.sleep(2000);
+                LogUtil.log("TimerTask last at:" + new Date());
             } catch (Exception e) {
                 e.printStackTrace();
             }

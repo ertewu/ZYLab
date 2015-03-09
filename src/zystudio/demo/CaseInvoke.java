@@ -1,6 +1,6 @@
 package zystudio.demo;
 
-import zystudio.cases.javabase.CaseShiftOperation;
+import zystudio.cases.javabase.CaseTimerAndTimerTask;
 import android.app.Activity;
 
 public class CaseInvoke {
@@ -17,8 +17,9 @@ public class CaseInvoke {
     }
 
     public static void invokeCase(Activity activity) {
+//        CaseDrawText.obtain(activity).work();
 //        CaseInstanceof.obtain(activity).work();
-//        CaseTimerAndTimerTask.intance().work();
+        CaseTimerAndTimerTask.intance().work();
         // CaseCallableAndFuture.instance().work();
         // CaseJavaRandom.obtain().work();
         // CaseDeepCopy.obtain().work();
@@ -45,7 +46,7 @@ public class CaseInvoke {
         // CaseForLinkedHashMap.instance(activity).work();
         // CaseCreateTempFile.showDemo(activity);
         // CaseForViewRootImpl.getInstance(activity).work();
-         CaseShiftOperation.obtain(activity).work();
+//         CaseShiftOperation.obtain(activity).work();
         // CaseForCustomAnim1.obtain(activity).work();
         // CaseThreadPriority.getInstance(activity).work();
         // CaseThreadJoin.getInstance(activity).work();
