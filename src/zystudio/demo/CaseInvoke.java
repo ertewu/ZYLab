@@ -1,10 +1,12 @@
 package zystudio.demo;
 
-import zystudio.cases.graphics.touch.CaseForTouch2;
+import zystudio.cases.multithread.CaseThreadPriority;
 import android.app.Activity;
 
 public class CaseInvoke {
     public static void invokeCase(Activity activity) {
+
+        CaseThreadPriority.getInstance(activity).work();
 //        CaseForCustViewAttr.obtain(activity).work();
 //        CaseThreadJoin.obtain().work();
         // CaseURLEncoder.obtain().work();
@@ -14,7 +16,7 @@ public class CaseInvoke {
         // CaseInvokeFinalStatic.obtain().work();
         // CaseTrigger.obtain(activity).work();
         // CaseLikeEscape.obtain(activity).work();
-         CaseForTouch2.obtain(activity).work();
+        // CaseForTouch2.obtain(activity).work();
         // CaseDecorMeasureInfo.instance(activity).work();
         // CaseForRegex.obtain().work();
         // CaseDrawables.obtain(activity).work();
@@ -29,7 +31,6 @@ public class CaseInvoke {
         // CaseForViewRootImpl.getInstance(activity).work();
         // CaseShiftOperation.obtain(activity).work();
         // CaseForCustomAnim1.obtain(activity).work();
-        // CaseThreadPriority.getInstance(activity).work();
         // CaseThreadJoin.getInstance(activity).work();
         // CaseForMath.obtain().work();
         // CaseForFinal.getInstance(activity).work();
