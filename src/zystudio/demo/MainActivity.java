@@ -9,10 +9,15 @@ import android.util.SparseArray;
 
 public class MainActivity extends Activity {
 
+    private static Activity sActivity;
+
+    public static Activity getActivity(){
+        return sActivity;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        sActivity=this;
         SparseArray<String> mArray=new SparseArray<String>();
         mArray.put(0x11, "HaHa");
         String mStr=mArray.get(-1);
@@ -32,7 +37,7 @@ public class MainActivity extends Activity {
         String toCutStr="abcde";
         String cutStr=toCutStr.substring(0, 3);
         Log.i("ZYStudio","cut str is:"+cutStr);
-         CaseInvoke.invokeCase(this);
+        CaseInvoke.invokeCase(this);
         // String text =
         // getResources().getString((R.string.novel_offline_progress), 23);
         // LogUtil.log(text);

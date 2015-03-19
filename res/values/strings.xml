@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="scroll_case">Scrolls</string>
     <string name="novel_offline_progress">已离线%d%%</string>
+    <string name="str_demo">小米公司董事长雷军在官方微博宣布2015年3月19日早上11:00，小米将宣布一件与小米电视有关的事情。暂时我们还不知道是什么事情，或许是小米电视2降价，或许是小米电视2新款配色上市，又或许是小米电视3发布。根据以往的经验，小米电视这种“待公布”的时间往往都是雷声大雨点小，所以大家不必期待太多，很快就会公布</string>
 
 </resources>
