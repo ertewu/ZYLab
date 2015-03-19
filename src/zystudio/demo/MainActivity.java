@@ -18,6 +18,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         sActivity=this;
+        // CaseInvoke.invokeCase(this);
+        CaseEvenChecker.test();
+
         SparseArray<String> mArray=new SparseArray<String>();
         mArray.put(0x11, "HaHa");
         String mStr=mArray.get(-1);

@@ -50,6 +50,10 @@
             android:name=".cases.net.CaseDownloadActivity" 
             android:label="@string/app_name">
         </activity>
+        <activity
+            android:name=".cases.net.CaseVelloyNetActivity" 
+            android:label="VelloyNet">
+        </activity>
                 <activity
             android:name="zystudio.demo.fakeqqnavigation.CaseShowScrollActivity" 
             android:label="@string/scroll_case">

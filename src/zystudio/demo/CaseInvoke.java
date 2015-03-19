@@ -1,6 +1,7 @@
 package zystudio.demo;
-
 import zystudio.cases.graphics.view.CaseStaticLayout;
+import zystudio.cases.multithread.CaseThreadPriority;
+import zystudio.cases.javabase.CaseTimerAndTimerTask;
 import android.app.Activity;
 
 public class CaseInvoke {
@@ -10,6 +11,12 @@ public class CaseInvoke {
 //        CaseDrawText.obtain(activity).work();
 //        CaseInstanceof.obtain(activity).work();
 //        CaseTimerAndTimerTask.intance().work();
+        //CaseThreadPriority.getInstance(activity).work();
+//        CaseForCustViewAttr.obtain(activity).work();
+//        CaseThreadJoin.obtain().work();
+//        CaseDrawText.obtain(activity).work();
+//        CaseInstanceof.obtain(activity).work();
+        //CaseTimerAndTimerTask.intance().work();
         // CaseCallableAndFuture.instance().work();
         // CaseJavaRandom.obtain().work();
         // CaseDeepCopy.obtain().work();
@@ -38,7 +45,6 @@ public class CaseInvoke {
         // CaseForViewRootImpl.getInstance(activity).work();
 //         CaseShiftOperation.obtain(activity).work();
         // CaseForCustomAnim1.obtain(activity).work();
-        // CaseThreadPriority.getInstance(activity).work();
         // CaseThreadJoin.getInstance(activity).work();
         // CaseForMath.obtain().work();
         // CaseForFinal.getInstance(activity).work();
