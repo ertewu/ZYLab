@@ -1,13 +1,13 @@
 package zystudio.demo;
-import zystudio.cases.graphics.view.CaseStaticLayout;
-import zystudio.cases.multithread.CaseThreadPriority;
-import zystudio.cases.javabase.CaseTimerAndTimerTask;
+import zystudio.cases.dataprocess.net.CaseVelloyNetActivity;
 import android.app.Activity;
 
 public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
-        CaseStaticLayout.getInstance(activity).work();
+        CaseVelloyNetActivity.start(activity);
+//        CaseBlockingQueue.getInstance().showCase();
+//        CaseStaticLayout.getInstance(activity).work();
 //        CaseDrawText.obtain(activity).work();
 //        CaseInstanceof.obtain(activity).work();
 //        CaseTimerAndTimerTask.intance().work();

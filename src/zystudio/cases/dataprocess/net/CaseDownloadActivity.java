@@ -41,9 +41,7 @@ public class CaseDownloadActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.casefordownload_activity);
-        mSkinFile = getFilesDir().getAbsolutePath() + "/"
-                + System.currentTimeMillis() % 10000 + ".9.png";
-
+        mSkinFile = getFilesDir().getAbsolutePath() + "/" + System.currentTimeMillis() % 10000 + ".9.png";
         startBtn = (Button) findViewById(R.id.startBtn);
         startBtn.setOnClickListener(new OnClickListener() {
             @Override
