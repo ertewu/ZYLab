@@ -1,0 +1,20 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <zystudio.demo.views.MixColorFrameLayout 
+        android:id="@+id/myframe"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" >
+
+        <TextView
+            android:id="@+id/my_txtview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#707070"
+            android:text="WZY WZY WZY WZY "
+            android:textSize="18sp" >
+        </TextView>
+    </zystudio.demo.views.MixColorFrameLayout>
+</FrameLayout>

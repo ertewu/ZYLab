@@ -51,6 +51,10 @@
             android:label="@string/app_name">
         </activity>
         <activity
+            android:name="zystudio.cases.graphics.MixColorTextActivity" 
+            android:label="@string/app_name">
+        </activity>
+        <activity
             android:name="zystudio.cases.dataprocess.net.CaseVelloyNetActivity" 
             android:label="VelloyNet">
         </activity>

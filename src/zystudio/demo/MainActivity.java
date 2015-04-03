@@ -1,5 +1,6 @@
 package zystudio.demo;
 
+import zystudio.cases.graphics.MixColorTextActivity;
 import android.app.Activity;
 import android.os.Bundle;
 
@@ -36,7 +37,6 @@ public class MainActivity extends Activity {
 //        String toCutStr="abcde";
 //        String cutStr=toCutStr.substring(0, 3);
 //        Log.i("ZYStudio","cut str is:"+cutStr);
-        CaseInvoke.invokeCase(this);
         // String text =
         // getResources().getString((R.string.novel_offline_progress), 23);
         // LogUtil.log(text);
@@ -78,6 +78,7 @@ public class MainActivity extends Activity {
         // int compare4="3.2".compareTo("3.2.0");
         // Log.i("ertewu",
         // "compares:"+compare+"|"+compare2+"|"+compare3+"|"+compare4);
+        MixColorTextActivity.startMixColorActivity(this);
     }
 
 

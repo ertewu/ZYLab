@@ -1,7 +1,5 @@
 package zystudio.cases.dataprocess.net;
 
-import org.json.JSONObject;
-
 import zystudio.demo.R;
 import zystudio.mylib.utils.LogUtil;
 import zystudio.utils.Util;
@@ -26,7 +24,6 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageLoader.ImageCache;
 import com.android.volley.toolbox.ImageLoader.ImageListener;
 import com.android.volley.toolbox.ImageRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -107,22 +104,6 @@ public class CaseVelloyNetActivity extends Activity {
         queue.add(request);
     }
 
-    private void fetchJsonDemo() {
-        mUrl = null;
-        RequestQueue queue = Volley.newRequestQueue(this);
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, mUrl, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                    }
-                });
-    }
 
     private void fetchTextDemo() {
         mUrl = "http://www.baidu.com";
