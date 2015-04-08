@@ -12,7 +12,7 @@
             android:id="@+id/my_txtview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#707070"
+            android:textColor="#66AAFF"
             android:text="WZY WZY WZY WZY "
             android:textSize="18sp" >
         </TextView>
