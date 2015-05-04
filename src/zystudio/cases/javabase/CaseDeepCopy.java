@@ -19,6 +19,14 @@ public class CaseDeepCopy {
     }
 
     public void work() {
+        showDeepCopy();
+    }
+
+    // public void showShallowCopy(){
+    //
+    // }
+
+    public void showDeepCopy() {
         Student stud = new Student("John", "Algebra");
         LogUtil.log("Original Object:" + stud.getName() + "-" + stud.getSubj().getName());
         Student clonedStud = (Student) stud.clone();
@@ -26,13 +34,8 @@ public class CaseDeepCopy {
 
         stud.setName("Dan");
         stud.getSubj().setName("Physics");
-        LogUtil.log("Original Object after it is updated:" + stud.getName() + "-"
-                + stud.getSubj().getName());
-        LogUtil.log("Cloned Object after it is updated:" + clonedStud.getName() + "-"
-                + clonedStud.getSubj().getName());
-        /*
-         *
-         */
+        LogUtil.log("Original Object after it is updated:" + stud.getName() + "-" + stud.getSubj().getName());
+        LogUtil.log("Cloned Object after it is updated:" + clonedStud.getName() + "-" + clonedStud.getSubj().getName());
     }
 
     private static class Subject {
@@ -52,7 +55,7 @@ public class CaseDeepCopy {
     }
 
     private static class Student implements Cloneable {
-        private Subject mSubj;
+        private final Subject mSubj;
         private String mName;
 
         public Student(String s, String sub) {
@@ -72,12 +75,25 @@ public class CaseDeepCopy {
             mName = s;
         }
 
-        @Override
-        public Object clone() {
-            // Deep copy
-            // 调用了一下构造函数，就是DeepCopy了
-            Student s = new Student(mName, mSubj.getName());
-            return s;
-        }
+//        @Override
+//        protected Object clone() {
+//            /**
+//             *这里我们发现，作为原类型的String name，两个对象的值已经不同了，但是作为自定义对象类型 的subject，两个一块改了。这就是浅复制 
+//             */
+//            try {
+//                return super.clone();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//            return null;
+//        }
+
+         @Override
+         public Object clone() {
+         // Deep copy
+         // 调用了一下构造函数，就是DeepCopy了,我们发现这两个值都完全不一样，subject的值也不一样了，说明生成了新的自定义对象类型
+         Student s = new Student(mName, mSubj.getName());
+         return s;
+         }
     }
 }

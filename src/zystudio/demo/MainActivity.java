@@ -8,35 +8,36 @@ public class MainActivity extends Activity {
 
     private static Activity sActivity;
 
-    public static Activity getActivity(){
+    public static Activity getActivity() {
         return sActivity;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sActivity=this;
-        // CaseInvoke.invokeCase(this);
-//        CaseEvenChecker.test();
-//
-//        SparseArray<String> mArray=new SparseArray<String>();
-//        mArray.put(0x11, "HaHa");
-//        String mStr=mArray.get(-1);
-//        Log.i("ZYStudio", "mStr is:"+mStr);
-//        mStr=mArray.get(0x11);
-//        Log.i("ZYStudio", "mStr is:"+mStr);
-//
-//        HashMap<Integer,String> mHash=new HashMap<Integer,String>();
-//        mHash.put(0x11, "HaHa");
-//        mStr=mHash.get(-1);
-//        Log.i("ZYStudio", "mStr r28 is:"+mStr);
-//        mStr=mHash.get(0x11);
-//        Log.i("ZYStudio", "mStr r30 is:"+mStr);
-//        // long aYear=60*60*24*365*1000;
-//        // LogUtil.log("aYear is:"+aYear);
-//
-//        String toCutStr="abcde";
-//        String cutStr=toCutStr.substring(0, 3);
-//        Log.i("ZYStudio","cut str is:"+cutStr);
+        sActivity = this;
+        CaseInvoke.invokeCase(this);
+        // CaseEvenChecker.test();
+        //
+        // SparseArray<String> mArray=new SparseArray<String>();
+        // mArray.put(0x11, "HaHa");
+        // String mStr=mArray.get(-1);
+        // Log.i("ZYStudio", "mStr is:"+mStr);
+        // mStr=mArray.get(0x11);
+        // Log.i("ZYStudio", "mStr is:"+mStr);
+        //
+        // HashMap<Integer,String> mHash=new HashMap<Integer,String>();
+        // mHash.put(0x11, "HaHa");
+        // mStr=mHash.get(-1);
+        // Log.i("ZYStudio", "mStr r28 is:"+mStr);
+        // mStr=mHash.get(0x11);
+        // Log.i("ZYStudio", "mStr r30 is:"+mStr);
+        // // long aYear=60*60*24*365*1000;
+        // // LogUtil.log("aYear is:"+aYear);
+        //
+        // String toCutStr="abcde";
+        // String cutStr=toCutStr.substring(0, 3);
+        // Log.i("ZYStudio","cut str is:"+cutStr);
         // String text =
         // getResources().getString((R.string.novel_offline_progress), 23);
         // LogUtil.log(text);
@@ -59,10 +60,10 @@ public class MainActivity extends Activity {
         // String value=map.get("nihao");
         // LogUtil.log("value is:"+value);
 
-//         setContentView(R.layout.activity_main);
-//         TextView myTv=(TextView)findViewById(R.id.my_txtview);
-//         myTv.setText(Html.fromHtml("你好啊&quot;"));
-//         myTv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
+        // setContentView(R.layout.activity_main);
+        // TextView myTv=(TextView)findViewById(R.id.my_txtview);
+        // myTv.setText(Html.fromHtml("你好啊&quot;"));
+        // myTv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
         // Spannable word = new SpannableString("Your message\n");
         // word.setSpan(new ForegroundColorSpan(Color.BLUE), 0, word.length(),
         // Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -80,8 +81,6 @@ public class MainActivity extends Activity {
         // "compares:"+compare+"|"+compare2+"|"+compare3+"|"+compare4);
         MixColorTextActivity.startMixColorActivity(this);
     }
-
-
 
     public static class MyBean implements Cloneable {
         private String Name;

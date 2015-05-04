@@ -21,10 +21,10 @@ public class CaseForTryFinally {
      */
     public void work(){
         try{
-            Log.i("ertewu", "r21 occured");
+            Log.i("ZYStudio", "r21 occured");
             return ;
         }finally{
-            Log.i("ertewu", "finally occured");
+            Log.i("ZYStudio", "finally occured");
         }
     }
 }

@@ -1,22 +1,24 @@
 package zystudio.demo;
-import zystudio.cases.dataprocess.net.CaseVelloyNetActivity;
+
 import android.app.Activity;
 
 public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
-        CaseVelloyNetActivity.start(activity);
-//        CaseBlockingQueue.getInstance().showCase();
-//        CaseStaticLayout.getInstance(activity).work();
-//        CaseDrawText.obtain(activity).work();
-//        CaseInstanceof.obtain(activity).work();
-//        CaseTimerAndTimerTask.intance().work();
-        //CaseThreadPriority.getInstance(activity).work();
-//        CaseForCustViewAttr.obtain(activity).work();
-//        CaseThreadJoin.obtain().work();
-//        CaseDrawText.obtain(activity).work();
-//        CaseInstanceof.obtain(activity).work();
-        //CaseTimerAndTimerTask.intance().work();
+//        CaseParamDelivery.work();
+        // CaseAddAdd.work();
+        // CaseVelloyNetActivity.start(activity);
+        // CaseBlockingQueue.getInstance().showCase();
+        // CaseStaticLayout.getInstance(activity).work();
+        // CaseDrawText.obtain(activity).work();
+        // CaseInstanceof.obtain(activity).work();
+        // CaseTimerAndTimerTask.intance().work();
+        // CaseThreadPriority.getInstance(activity).work();
+        // CaseForCustViewAttr.obtain(activity).work();
+        // CaseThreadJoin.obtain().work();
+        // CaseDrawText.obtain(activity).work();
+        // CaseInstanceof.obtain(activity).work();
+        // CaseTimerAndTimerTask.intance().work();
         // CaseCallableAndFuture.instance().work();
         // CaseJavaRandom.obtain().work();
         // CaseDeepCopy.obtain().work();
@@ -43,7 +45,7 @@ public class CaseInvoke {
         // CaseForLinkedHashMap.instance(activity).work();
         // CaseCreateTempFile.showDemo(activity);
         // CaseForViewRootImpl.getInstance(activity).work();
-//         CaseShiftOperation.obtain(activity).work();
+        // CaseShiftOperation.obtain(activity).work();
         // CaseForCustomAnim1.obtain(activity).work();
         // CaseThreadJoin.getInstance(activity).work();
         // CaseForMath.obtain().work();
@@ -51,9 +53,7 @@ public class CaseInvoke {
 
         // CaseForTryFinally.obtain().work();
         // CaseForResourceUri.obtain().work(activity);
-
         // CaseForNullInvoke.obtain().work();
-
         // CaseForFinal.getInstance(activity).work();
 
         // CaseForAnim1.getInstance(activity).work();
