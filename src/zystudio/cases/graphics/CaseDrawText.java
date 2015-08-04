@@ -62,8 +62,8 @@ public class CaseDrawText {
         @Override
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
-            drawHorizontalSpacingText(canvas);
-//            draw1Demo(canvas);
+//            drawHorizontalSpacingText(canvas);
+            draw1Demo(canvas);
 //            draw2Demo(canvas);
         }
         private void drawHorizontalSpacingText(Canvas canvas){

@@ -1,6 +1,5 @@
 package zystudio.demo;
 
-import zystudio.cases.graphics.MixColorTextActivity;
 import android.app.Activity;
 import android.os.Bundle;
 
@@ -15,7 +14,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         sActivity=this;
-        // CaseInvoke.invokeCase(this);
+
+         CaseInvoke.invokeCase(this);
+
 //        CaseEvenChecker.test();
 //
 //        SparseArray<String> mArray=new SparseArray<String>();
@@ -78,7 +79,7 @@ public class MainActivity extends Activity {
         // int compare4="3.2".compareTo("3.2.0");
         // Log.i("ertewu",
         // "compares:"+compare+"|"+compare2+"|"+compare3+"|"+compare4);
-        MixColorTextActivity.startMixColorActivity(this);
+//        MixColorTextActivity.startMixColorActivity(this);
     }
 
 

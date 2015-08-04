@@ -58,12 +58,15 @@
             android:name="zystudio.cases.dataprocess.net.CaseVelloyNetActivity" 
             android:label="VelloyNet">
         </activity>
-                <activity
+         <activity
             android:name="zystudio.demo.fakeqqnavigation.CaseShowScrollActivity" 
             android:label="@string/scroll_case">
-        </activity>        
-        
-         <receiver
+        </activity>
+        <activity
+            android:name="zystudio.cases.androidmechanism.CaseLoadExternalApkActivity"
+            android:label="LoadExternalApk" >
+        </activity>
+<receiver
             android:name=".ScreenReceiver"
             android:exported="true" >
             <intent-filter>

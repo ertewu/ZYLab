@@ -76,7 +76,7 @@ public class CaseShallowCopy {
                 //用的super.clone实际上是调用了Object.clone方法，
                 //Object有clone方法但是从没有调用过就像一个utility方法，而且是protected
                 //而你这个Object继承了Cloneable接口，然后在接口中调用Object.clone方法，这函数就成public的了
-                //通过这个实验也得出调用 Object.clone，实际上是浅复制，元类型name没有再多生成一个
+                //通过这个实验也得出调用 Object.clone，实际上是浅复制，非元类型subject没有再多生成一个,但是元类型string成功多复制出了一个
                 return super.clone();
             }catch (CloneNotSupportedException e){
               return null;

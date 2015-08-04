@@ -1,11 +1,23 @@
 package zystudio.demo;
-import zystudio.cases.dataprocess.net.CaseVelloyNetActivity;
+import zystudio.cases.androidmechanism.CaseLoadExternalApkActivity;
+import zystudio.cases.dataprocess.CaseAES;
+import zystudio.cases.graphics.CaseDrawText;
+import zystudio.cases.graphics.MixColorTextActivity;
 import android.app.Activity;
 
 public class CaseInvoke {
 
+
     public static void invokeCase(Activity activity) {
-        CaseVelloyNetActivity.start(activity);
+
+        MixColorTextActivity.startMixColorActivity(activity);
+//        CaseAES.getInstance(activity).showCase();
+//        CaseLoadExternalApkActivity.launch(activity);
+//      CaseShow.show();
+//         CaseForAnnotation.getInstance(activity).work();
+//        CaseAOP.obtain().performTest();
+//        CaseDynamicProxy.obtain().perform();
+//        CaseVelloyNetActivity.start(activity);
 //        CaseBlockingQueue.getInstance().showCase();
 //        CaseStaticLayout.getInstance(activity).work();
 //        CaseDrawText.obtain(activity).work();
@@ -19,8 +31,8 @@ public class CaseInvoke {
         //CaseTimerAndTimerTask.intance().work();
         // CaseCallableAndFuture.instance().work();
         // CaseJavaRandom.obtain().work();
-        // CaseDeepCopy.obtain().work();
-        // CaseShallowCopy.obtain().work();
+//         CaseDeepCopy.obtain().work();
+//         CaseShallowCopy.obtain().work();
         // CaseForCustViewAttr.obtain(activity).work();
         // CaseThreadJoin.obtain().work();
         // CaseURLEncoder.obtain().work();
@@ -57,7 +69,6 @@ public class CaseInvoke {
         // CaseForFinal.getInstance(activity).work();
 
         // CaseForAnim1.getInstance(activity).work();
-        // CaseForAnnotation.getInstance(this).work();
 
         // CaseForDraw.getInstance(activity).work();
 

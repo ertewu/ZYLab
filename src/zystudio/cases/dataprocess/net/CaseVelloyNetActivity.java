@@ -30,8 +30,8 @@ import com.android.volley.toolbox.Volley;
 /**
  *这个教程很好
  * http://blog.csdn.net/guolin_blog/article/details/17482165
- *
  */
+
 public class CaseVelloyNetActivity extends Activity {
 
     private static final String SIMPLE_URL = "http://farm1.static.flickr.com/114/298125983_0e4bf66782_b.jpg";
