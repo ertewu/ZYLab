@@ -7,9 +7,10 @@ public class MainActivity extends Activity {
 
     private static Activity sActivity;
 
-    public static Activity getActivity(){
+    public static Activity getActivity() {
         return sActivity;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,10 +61,10 @@ public class MainActivity extends Activity {
         // String value=map.get("nihao");
         // LogUtil.log("value is:"+value);
 
-//         setContentView(R.layout.activity_main);
-//         TextView myTv=(TextView)findViewById(R.id.my_txtview);
-//         myTv.setText(Html.fromHtml("你好啊&quot;"));
-//         myTv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
+        // setContentView(R.layout.activity_main);
+        // TextView myTv=(TextView)findViewById(R.id.my_txtview);
+        // myTv.setText(Html.fromHtml("你好啊&quot;"));
+        // myTv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
         // Spannable word = new SpannableString("Your message\n");
         // word.setSpan(new ForegroundColorSpan(Color.BLUE), 0, word.length(),
         // Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -81,8 +82,6 @@ public class MainActivity extends Activity {
         // "compares:"+compare+"|"+compare2+"|"+compare3+"|"+compare4);
 //        MixColorTextActivity.startMixColorActivity(this);
     }
-
-
 
     public static class MyBean implements Cloneable {
         private String Name;

@@ -15,7 +15,6 @@ import android.util.Log;
 public class CaseJavaContainer {
 
     private static CaseJavaContainer sCase;
-
     public static CaseJavaContainer obtain() {
         if (sCase == null) {
             sCase = new CaseJavaContainer();

@@ -22,7 +22,7 @@ public class CaseForNullInvoke {
        b=c;
 
        //春哥说java是値引用，于是是null
-       Log.i("ertewu", "a is null?:"+a);
+       Log.i("ZYStudio", "a is null?:"+a);
     }
 
     public class DemoClass{
