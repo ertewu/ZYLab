@@ -1,8 +1,5 @@
 package zystudio.demo;
 
-import zystudio.cases.androidmechanism.CaseLoadExternalApkActivity;
-import zystudio.cases.dataprocess.CaseAES;
-import zystudio.cases.graphics.CaseDrawText;
 import zystudio.cases.graphics.MixColorTextActivity;
 import android.app.Activity;
 
