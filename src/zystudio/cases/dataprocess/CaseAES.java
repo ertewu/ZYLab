@@ -104,6 +104,15 @@ public class CaseAES {
 
     }
 
+    /**
+     * 第一个,第二个链接　讲加密模式讲得特别好，　第三个链接讲填充模式讲得不错　
+     * 常规中，我们就用cbc的加密模式，PKCS5Padding的加密模式了
+     * CBC的加密模式就需要ＩＶ 初始向量了
+     * 
+     *http://wenku.baidu.com/view/01114e8683d049649b665801.html 
+     * http://blog.poxiao.me/p/advanced-encryption-standard-and-block-cipher-mode/
+     * http://blog.sina.com.cn/s/blog_679daa6b0100zmpp.html 
+     */
     private byte[] encrypt(byte[] plainTextByte){
         try{
             String key=KEY_IV[0][0];

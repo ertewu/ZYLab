@@ -1,5 +1,9 @@
 package zystudio.demo;
 
+import zystudio.cases.dataprocess.CaseCreateTempFile;
+import zystudio.cases.dataprocess.db.CaseRandomAccessFile;
+import zystudio.cases.dataprocess.net.CaseDownloadActivity;
+import zystudio.cases.dataprocess.net.CaseVelloyNetActivity;
 import zystudio.cases.graphics.MixColorTextActivity;
 import android.app.Activity;
 
@@ -7,14 +11,15 @@ public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
-        MixColorTextActivity.startMixColorActivity(activity);
-        // CaseAES.getInstance(activity).showCase();
+        CaseRandomAccessFile.showDemo();
+//        MixColorTextActivity.startMixColorActivity(activity);
+//         CaseAES.getInstance(activity).showCase();
         // CaseLoadExternalApkActivity.launch(activity);
         // CaseShow.show();
         // CaseForAnnotation.getInstance(activity).work();
         // CaseAOP.obtain().performTest();
         // CaseDynamicProxy.obtain().perform();
-        // CaseVelloyNetActivity.start(activity);
+//         CaseVelloyNetActivity.start(activity);
         // CaseBlockingQueue.getInstance().showCase();
         // CaseStaticLayout.getInstance(activity).work();
         // CaseDrawText.obtain(activity).work();
@@ -42,7 +47,7 @@ public class CaseInvoke {
         // CaseJavaContainer.obtain().work();
         // CaseCanvas.obtain(activity).work();
         // CaseSpecialDrawable.obtain(activity).work();
-        // CaseDownloadActivity.start(activity);
+//         CaseDownloadActivity.start(activity);
         // CaseGson.obtain(activity).work();
         // CaseBitmapOperate.obtain(activity).work();
         // CaseForLinkedHashMap.instance(activity).work();

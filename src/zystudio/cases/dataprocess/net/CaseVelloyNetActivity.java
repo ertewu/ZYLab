@@ -53,15 +53,18 @@ public class CaseVelloyNetActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.casevelloy_activity);
         mImgView = (ImageView) findViewById(R.id.img);
-        mSkinFile = getFilesDir().getAbsolutePath() + "/" + System.currentTimeMillis() % 10000
-                + ".9.png";
+        mSkinFile = getFilesDir().getAbsolutePath() + "/" + System.currentTimeMillis() % 10000 + ".9.png";
         startBtn = (Button) findViewById(R.id.startBtn);
         startBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                // fetchTextDemo();
-                // fetchImgDemo();
-                fetchImgImageLoader();
+            	if(System.currentTimeMillis()%2==0){
+//            		fetchTextDemo();
+            		fetchImgDemo();
+            	}else{
+            		fetchImgDemo();
+            	}
+            	//                fetchImgImageLoader();
             }
         });
     }
@@ -76,8 +79,7 @@ public class CaseVelloyNetActivity extends Activity {
         // public void putBitmap(String url, Bitmap bitmap) { }
         // });
         ImageLoader imgLoader = new ImageLoader(queue, new BitmapCache());
-        ImageListener listener = ImageLoader.getImageListener(mImgView, R.drawable.default_sign,
-                R.drawable.error_sign);
+        ImageListener listener = ImageLoader.getImageListener(mImgView, R.drawable.default_sign, R.drawable.error_sign);
         imgLoader.get(SIMPLE_URL2, listener, 200, 200);
     }
 
