@@ -11,15 +11,15 @@ public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
-        CaseRandomAccessFile.showDemo();
-//        MixColorTextActivity.startMixColorActivity(activity);
-//         CaseAES.getInstance(activity).showCase();
+        //        CaseRandomAccessFile.showDemo();
+        //        MixColorTextActivity.startMixColorActivity(activity);
+        //         CaseAES.getInstance(activity).showCase();
         // CaseLoadExternalApkActivity.launch(activity);
         // CaseShow.show();
         // CaseForAnnotation.getInstance(activity).work();
         // CaseAOP.obtain().performTest();
         // CaseDynamicProxy.obtain().perform();
-//         CaseVelloyNetActivity.start(activity);
+        CaseVelloyNetActivity.start(activity);
         // CaseBlockingQueue.getInstance().showCase();
         // CaseStaticLayout.getInstance(activity).work();
         // CaseDrawText.obtain(activity).work();
@@ -47,7 +47,7 @@ public class CaseInvoke {
         // CaseJavaContainer.obtain().work();
         // CaseCanvas.obtain(activity).work();
         // CaseSpecialDrawable.obtain(activity).work();
-//         CaseDownloadActivity.start(activity);
+        //         CaseDownloadActivity.start(activity);
         // CaseGson.obtain(activity).work();
         // CaseBitmapOperate.obtain(activity).work();
         // CaseForLinkedHashMap.instance(activity).work();

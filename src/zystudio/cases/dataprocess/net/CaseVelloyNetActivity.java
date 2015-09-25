@@ -1,7 +1,13 @@
 package zystudio.cases.dataprocess.net;
 
+import java.nio.charset.Charset;
+
 import zystudio.demo.R;
+import zystudio.mylib.utils.FileUtil;
 import zystudio.mylib.utils.LogUtil;
+import zystudio.utils.ByteUtil;
+import zystudio.utils.CompressionUtils;
+import zystudio.utils.CryptoUtils;
 import zystudio.utils.Util;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -16,6 +22,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -58,16 +65,28 @@ public class CaseVelloyNetActivity extends Activity {
         startBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-            	if(System.currentTimeMillis()%2==0){
-//            		fetchTextDemo();
-            		fetchImgDemo();
-            	}else{
-            		fetchImgDemo();
-            	}
-            	//                fetchImgImageLoader();
+                fetchSunBoInterfaceDemo();
+                //            	if(System.currentTimeMillis()%2==0){
+                ////            		fetchTextDemo();
+                //            		fetchImgDemo();
+                //            	}else{
+                //            		fetchImgDemo();
+                //            	}
+                //                fetchImgImageLoader();
             }
         });
     }
+    private byte[] deflateAndEncryptData(byte[] data) {
+        try {
+            byte[] defaltedData = CompressionUtils.compress(data);
+            byte[] defaltedAndEncryptData = CryptoUtils.encrypt(defaltedData);
+            return defaltedAndEncryptData;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ByteUtil.EMPTY_BYTES;
+    }
+
 
     private void fetchImgImageLoader() {
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -87,8 +106,8 @@ public class CaseVelloyNetActivity extends Activity {
         mUrl = SIMPLE_URL;
         RequestQueue queue = Volley.newRequestQueue(this);
         ImageRequest request = new ImageRequest(mUrl,
-        /** <br> */
-        new Response.Listener<Bitmap>() {
+                /** <br> */
+                new Response.Listener<Bitmap>() {
             @Override
             public void onResponse(Bitmap response) {
                 mImgView.setImageBitmap(response);
@@ -106,22 +125,50 @@ public class CaseVelloyNetActivity extends Activity {
         queue.add(request);
     }
 
+    private void fetchSunBoInterfaceDemo() {
+        //        mUrl = "http://www.baidu.com";
+        final String mUrl="http://data.mse.sogou.com/batchQuicklaunch.php?h=ffffffff-c5bf-052a-ef97-390c0033c587&r=0000&v=3.3.0&hv=AOSP+on+Mako&pv=ANDROID4.4.4&scale=3";
+        final String jsonStr=getResources().getString(R.string.demo_content);
+        RequestQueue queue = Volley.newRequestQueue(this);
+        StringRequest strRequest = new StringRequest(Request.Method.POST, mUrl,
+                new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                LogUtil.log("onResponse:" + response);
+                byte[] processedData=deflateAndEncryptData(response.getBytes());
+                FileUtil.exportToFileWithFOStream("/sdcard/sunbo_encrypt", processedData);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                LogUtil.log("onErrorResponse:" + error.getMessage());
+            }
+        }){
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                return jsonStr.getBytes(Charset.forName("UTF-8"));
+                //                return super.getBody();
+            }
+        };
+        queue.add(strRequest);
+    }
 
     private void fetchTextDemo() {
-        mUrl = "http://www.baidu.com";
+        //        mUrl = "http://www.baidu.com";
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest strRequest = new StringRequest(Request.Method.GET, mUrl,
                 new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        LogUtil.log("onResponse:" + response);
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        LogUtil.log("onErrorResponse:" + error.getMessage());
-                    }
-                });
+            @Override
+            public void onResponse(String response) {
+                LogUtil.log("onResponse:" + response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                LogUtil.log("onErrorResponse:" + error.getMessage());
+            }
+        });
         queue.add(strRequest);
     }
 
