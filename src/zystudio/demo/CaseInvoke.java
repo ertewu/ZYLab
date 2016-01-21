@@ -1,5 +1,6 @@
 package zystudio.demo;
 
+import zystudio.cases.dataprocess.net.CaseVelloyNetActivity;
 import zystudio.cases.ui.CaseCustViewPager;
 import android.app.Activity;
 
@@ -7,7 +8,7 @@ public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
-        CaseCustViewPager.getInstance().showCase(activity);
+        // CaseCustViewPager.getInstance().showCase(activity);
         // CaseOOMErrorCatch.obtain(activity).work();
         // CaseRandomAccessFile.showDemo();
         // MixColorTextActivity.startMixColorActivity(activity);
@@ -17,7 +18,7 @@ public class CaseInvoke {
         // CaseForAnnotation.getInstance(activity).work();
         // CaseAOP.obtain().performTest();
         // CaseDynamicProxy.obtain().perform();
-        // CaseVelloyNetActivity.start(activity);
+        CaseVelloyNetActivity.start(activity);
         // CaseBlockingQueue.getInstance().showCase();
         // CaseStaticLayout.getInstance(activity).work();
         // CaseDrawText.obtain(activity).work();

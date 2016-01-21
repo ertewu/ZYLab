@@ -1,12 +1,12 @@
 package zystudio.utils;
 
-import zystudio.demo.MainActivity;
+import zystudio.demo.ZYDemoApp;
 import android.widget.Toast;
 
 public class Util {
 
-    public static void showMsg(String str){
-        Toast.makeText(MainActivity.getActivity(),str,Toast.LENGTH_SHORT).show();
+    public static void showMsg(String str) {
+        Toast.makeText(ZYDemoApp.sAppContext,str,Toast.LENGTH_SHORT).show();
     }
 
 }
