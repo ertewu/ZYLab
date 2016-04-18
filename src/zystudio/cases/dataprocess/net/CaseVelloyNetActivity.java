@@ -65,14 +65,14 @@ public class CaseVelloyNetActivity extends Activity {
         startBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                fetchSunBoInterfaceDemo();
-                //            	if(System.currentTimeMillis()%2==0){
-                ////            		fetchTextDemo();
-                //            		fetchImgDemo();
-                //            	}else{
-                //            		fetchImgDemo();
-                //            	}
-                //                fetchImgImageLoader();
+                // fetchSunBoInterfaceDemo();
+                if (System.currentTimeMillis() % 2 == 0) {
+                    fetchTextDemo();
+                    // fetchImgDemo();
+                } else {
+                    fetchImgDemo();
+                }
+                fetchImgImageLoader();
             }
         });
     }

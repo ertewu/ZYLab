@@ -1,13 +1,17 @@
 package zystudio.demo;
 
-import zystudio.cases.javabase.CaseOOMErrorCatch;
+import zystudio.cases.dataprocess.net.CaseVelloyNetActivity;
+import zystudio.cases.graphics.CaseAsyncGenerateBitmap;
+import zystudio.cases.ui.CaseCustViewPager;
 import android.app.Activity;
 
 public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
-        CaseOOMErrorCatch.obtain(activity).work();
+        CaseAsyncGenerateBitmap.getInstance(activity).work();
+        // CaseCustViewPager.getInstance().showCase(activity);
+        // CaseOOMErrorCatch.obtain(activity).work();
         // CaseRandomAccessFile.showDemo();
         // MixColorTextActivity.startMixColorActivity(activity);
         // CaseAES.getInstance(activity).showCase();

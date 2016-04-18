@@ -2,120 +2,124 @@ package zystudio.demo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-    private static Activity sActivity;
-
-    public static Activity getActivity() {
-        return sActivity;
-    }
+    private Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("ZYStudio", "onCreate start:" + System.currentTimeMillis() % 10000);
         super.onCreate(savedInstanceState);
-        sActivity=this;
-
-         CaseInvoke.invokeCase(this);
-
-//        CaseEvenChecker.test();
-//
-//        SparseArray<String> mArray=new SparseArray<String>();
-//        mArray.put(0x11, "HaHa");
-//        String mStr=mArray.get(-1);
-//        Log.i("ZYStudio", "mStr is:"+mStr);
-//        mStr=mArray.get(0x11);
-//        Log.i("ZYStudio", "mStr is:"+mStr);
-//
-//        HashMap<Integer,String> mHash=new HashMap<Integer,String>();
-//        mHash.put(0x11, "HaHa");
-//        mStr=mHash.get(-1);
-//        Log.i("ZYStudio", "mStr r28 is:"+mStr);
-//        mStr=mHash.get(0x11);
-//        Log.i("ZYStudio", "mStr r30 is:"+mStr);
-//        // long aYear=60*60*24*365*1000;
-//        // LogUtil.log("aYear is:"+aYear);
-//
-//        String toCutStr="abcde";
-//        String cutStr=toCutStr.substring(0, 3);
-//        Log.i("ZYStudio","cut str is:"+cutStr);
-        // String text =
-        // getResources().getString((R.string.novel_offline_progress), 23);
-        // LogUtil.log(text);
-
-        // Collection<Integer> sets= new HashSet<Integer>(5);
-        // Log.i("ertewu", "r20 size is:"+sets.size());
-        //
-        // sets.add(111);
-        // sets.add(222);
-        // sets.add(333);
-        // Log.i("ertewu", "r25 size is:"+sets.size());
-        //
-        // sets.clear();
-        // Log.i("ertewu", "r28 size is:"+sets.size());
-        //
-        // HashMap<String,String>map=new HashMap<String,String>();
-        // map.put("nihao","p1");
-        // map.put("nihao","p2");
-        //
-        // String value=map.get("nihao");
-        // LogUtil.log("value is:"+value);
-
-        // setContentView(R.layout.activity_main);
-        // TextView myTv=(TextView)findViewById(R.id.my_txtview);
-        // myTv.setText(Html.fromHtml("你好啊&quot;"));
-        // myTv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
-        // Spannable word = new SpannableString("Your message\n");
-        // word.setSpan(new ForegroundColorSpan(Color.BLUE), 0, word.length(),
-        // Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        // myTv.setText(word);
-        // Spannable wordTwo = new SpannableString("Your new message");
-        // wordTwo.setSpan(new ForegroundColorSpan(Color.RED), 0,
-        // wordTwo.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        // myTv.append(wordTwo);
-
-        // int compare="3.3.0".compareTo("3.2.0");
-        // int compare2="3.2.0".compareTo("3.2.0");
-        // int compare3="3.1.5".compareTo("3.2.0");
-        // int compare4="3.2".compareTo("3.2.0");
-        // Log.i("ertewu",
-        // "compares:"+compare+"|"+compare2+"|"+compare3+"|"+compare4);
-//        MixColorTextActivity.startMixColorActivity(this);
+        Log.i("ZYStudio", "onCreate end:" + System.currentTimeMillis() % 10000);
+        // CaseInvoke.invokeCase(this);
+        showDimenDemo();
+        // setContentVIewByXml();
+        // setMyContentView();
+        // sogou.webkit.WebView my = new sogou.webkit.WebView(this);
+        // testLoadLibMethod();
     }
 
-    public static class MyBean implements Cloneable {
-        private String Name;
-        private int Index;
+    private void testLoadLibMethod() {
+        String dataDir = getApplicationInfo().dataDir;
+        Log.i("ZYStudio", "dataDir is:" + dataDir); // data/data/zystudio.demo
+        String libha = System.mapLibraryName("haha");
+        Log.i("ZYStudio", "libha is:" + libha); // libhaha.so
+        String pName = "";
+        System.load(pName);
+        String lpName = "";
+        System.loadLibrary(lpName);
+    }
 
-        public MyBean(String name, int index) {
-            Name = name;
-            Index = index;
+    private void showDimenDemo() {
+        setContentView(R.layout.activity_main);
+
+    }
+
+    private void setContentVIewByXml() {
+        Log.i("ZYStudio", "ContentView xml start:" + System.currentTimeMillis() % 10000);
+        View contentView = LayoutInflater.from(this).inflate(R.layout.activity_main, null);
+        Log.i("ZYStudio", "ContentView xml end:" + System.currentTimeMillis() % 10000);
+        setContentView(contentView);
+
+    }
+    private void setMyContentView() {
+        Log.i("ZYStudio", "ContentView start:" + System.currentTimeMillis() % 10000);
+        // 7
+        FrameLayout content = new FrameLayout(this);
+        Log.i("ZYStudio", "ContentView start:" + System.currentTimeMillis() % 10000);
+        FrameLayout content2 = new FrameLayout(this);
+        Log.i("ZYStudio", "ContentView start 2:" + System.currentTimeMillis() % 10000);
+        // 1
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        Log.i("ZYStudio", "ContentView start:" + System.currentTimeMillis() % 10000);
+        content.setLayoutParams(params);
+        Log.i("ZYStudio", "ContentView start:" + System.currentTimeMillis() % 10000);
+        // 19
+        TextView tView = new TextView(this);
+        Log.i("ZYStudio", "ContentView start:" + System.currentTimeMillis() % 10000);
+        TextView tView2 = new TextView(this);
+        Log.i("ZYStudio", "ContentView start3:" + System.currentTimeMillis() % 10000);
+        ViewGroup.LayoutParams wParams = new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        Log.i("ZYStudio", "ContentView start:" + System.currentTimeMillis() % 10000);
+        tView.setLayoutParams(wParams);
+        Log.i("ZYStudio", "ContentView start:" + System.currentTimeMillis() % 10000);
+        content.addView(tView);
+        Log.i("ZYStudio", "ContentView start:" + System.currentTimeMillis() % 10000);
+        View view = new View(this);
+        Log.i("ZYStudio", "ContentView start:" + System.currentTimeMillis() % 10000);
+        setContentView(content);
+    }
+
+    private static class Base {
+        private int mValue;
+        private String mStr;
+
+        public Base() {
+
         }
 
-        public String getName() {
-            return Name;
+        public void setValue(int value) {
+            mValue = value;
         }
 
-        public void setName(String name) {
-            Name = name;
+        public void setStr(String str) {
+            mStr = str;
         }
 
-        public int getIndex() {
-            return Index;
+        public Base(Base b) {
+            mValue = b.mValue;
+            mStr = b.mStr;
+        }
+    }
+
+    static class A extends Base {
+
+    }
+
+    static class B extends Base {
+        public B(A myA) {
+            super(myA);
         }
 
-        public void setIndex(int index) {
-            Index = index;
-        }
+    }
+    
+    void showDemo() {
+        A myA=new A();
+        myA.setStr("haha");
+        myA.setValue(222);
+        B myB = new B(myA);
+    }
 
-        @Override
-        public String toString() {
-            return Name + "|" + Index;
-        }
-
-        @Override
-        public Object clone() throws CloneNotSupportedException {
-            return super.clone();
-        }
+    public static Activity getActivity() {
+        return null;
     }
 }
