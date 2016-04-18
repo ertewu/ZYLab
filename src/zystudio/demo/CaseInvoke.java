@@ -1,6 +1,7 @@
 package zystudio.demo;
 
 import zystudio.cases.dataprocess.net.CaseVelloyNetActivity;
+import zystudio.cases.graphics.CaseAsyncGenerateBitmap;
 import zystudio.cases.ui.CaseCustViewPager;
 import android.app.Activity;
 
@@ -8,6 +9,7 @@ public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
+        CaseAsyncGenerateBitmap.getInstance(activity).work();
         // CaseCustViewPager.getInstance().showCase(activity);
         // CaseOOMErrorCatch.obtain(activity).work();
         // CaseRandomAccessFile.showDemo();
@@ -18,7 +20,7 @@ public class CaseInvoke {
         // CaseForAnnotation.getInstance(activity).work();
         // CaseAOP.obtain().performTest();
         // CaseDynamicProxy.obtain().perform();
-        CaseVelloyNetActivity.start(activity);
+        // CaseVelloyNetActivity.start(activity);
         // CaseBlockingQueue.getInstance().showCase();
         // CaseStaticLayout.getInstance(activity).work();
         // CaseDrawText.obtain(activity).work();

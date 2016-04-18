@@ -1,28 +1,47 @@
 package zystudio.demo;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+
+    private Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("ZYStudio", "onCreate start:" + System.currentTimeMillis() % 10000);
         super.onCreate(savedInstanceState);
         Log.i("ZYStudio", "onCreate end:" + System.currentTimeMillis() % 10000);
-        CaseInvoke.invokeCase(this);
+        // CaseInvoke.invokeCase(this);
+        showDimenDemo();
         // setContentVIewByXml();
         // setMyContentView();
         // sogou.webkit.WebView my = new sogou.webkit.WebView(this);
+        // testLoadLibMethod();
+    }
+
+    private void testLoadLibMethod() {
+        String dataDir = getApplicationInfo().dataDir;
+        Log.i("ZYStudio", "dataDir is:" + dataDir); // data/data/zystudio.demo
+        String libha = System.mapLibraryName("haha");
+        Log.i("ZYStudio", "libha is:" + libha); // libhaha.so
+        String pName = "";
+        System.load(pName);
+        String lpName = "";
+        System.loadLibrary(lpName);
+    }
+
+    private void showDimenDemo() {
+        setContentView(R.layout.activity_main);
+
     }
 
     private void setContentVIewByXml() {
