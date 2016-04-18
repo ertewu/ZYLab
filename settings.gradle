@@ -1,0 +1,3 @@
+include ':MyLib', ':Volley' ,':demo'
+project(':MyLib').projectDir=new File('/home/wzy/1_Develop/AndroidStudioProjects/MyLib')
+project(':Volley').projectDir=new File('/home/wzy/1_Develop/AndroidStudioProjects/Volley')
