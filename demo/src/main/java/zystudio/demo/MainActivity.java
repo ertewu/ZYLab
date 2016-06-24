@@ -17,11 +17,9 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("ZYStudio", "onCreate start:" + System.currentTimeMillis() % 10000);
         super.onCreate(savedInstanceState);
-        Log.i("ZYStudio", "onCreate end:" + System.currentTimeMillis() % 10000);
-        // CaseInvoke.invokeCase(this);
-        showDimenDemo();
+         CaseInvoke.invokeCase(this);
+//        showDimenDemo();
         // setContentVIewByXml();
         // setMyContentView();
         // sogou.webkit.WebView my = new sogou.webkit.WebView(this);

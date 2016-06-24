@@ -2,6 +2,7 @@ package zystudio.demo;
 
 import zystudio.cases.dataprocess.net.CaseVelloyNetActivity;
 import zystudio.cases.graphics.CaseAsyncGenerateBitmap;
+import zystudio.cases.javabase.CaseForEachIterator;
 import zystudio.cases.ui.CaseCustViewPager;
 import android.app.Activity;
 
@@ -9,6 +10,7 @@ public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
+        (new CaseForEachIterator()).work();
         CaseAsyncGenerateBitmap.getInstance(activity).work();
         // CaseCustViewPager.getInstance().showCase(activity);
         // CaseOOMErrorCatch.obtain(activity).work();
