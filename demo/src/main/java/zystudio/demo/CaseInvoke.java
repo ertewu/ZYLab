@@ -2,14 +2,25 @@ package zystudio.demo;
 
 import zystudio.cases.dataprocess.net.CaseVelloyNetActivity;
 import zystudio.cases.graphics.CaseAsyncGenerateBitmap;
+import zystudio.cases.javabase.CaseCharEncode;
+import zystudio.cases.javabase.container.CaseArrayListNew;
+import zystudio.cases.javabase.container.CaseHashSet;
+import zystudio.cases.javabase.container.CaseMaps;
+import zystudio.cases.javabase.io.CaseIOReader;
 import zystudio.cases.ui.CaseCustViewPager;
+
 import android.app.Activity;
 
 public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
-        CaseAsyncGenerateBitmap.getInstance(activity).work();
+        (new CaseHashSet()).work();
+//        (new CaseIOReader()).work();
+//        (new CaseCharEncode(activity)).showCase();
+//        (new CaseArrayListNew()).work();
+//        (new CaseMaps()).work();
+//        CaseAsyncGenerateBitmap.getInstance(activity).work();
         // CaseCustViewPager.getInstance().showCase(activity);
         // CaseOOMErrorCatch.obtain(activity).work();
         // CaseRandomAccessFile.showDemo();

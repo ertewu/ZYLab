@@ -3,6 +3,9 @@ package zystudio.demo;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,21 +14,40 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import java.lang.reflect.Field;
+
+import zystudio.mylib.utils.LogUtil;
+
 public class MainActivity extends Activity {
 
     private Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("ZYStudio", "onCreate start:" + System.currentTimeMillis() % 10000);
         super.onCreate(savedInstanceState);
-        Log.i("ZYStudio", "onCreate end:" + System.currentTimeMillis() % 10000);
-        // CaseInvoke.invokeCase(this);
-        showDimenDemo();
+         CaseInvoke.invokeCase(this);
+//         int i=1;
+//        int k=2;
+//        Log.i("ZYStudio","i is:"+i);
+//        showDimenDemo();
         // setContentVIewByXml();
         // setMyContentView();
         // sogou.webkit.WebView my = new sogou.webkit.WebView(this);
         // testLoadLibMethod();
+//        char ch=0xFECF;
+//        byte[] chbytes=ch.
+//        try{
+//            DisplayMetrics metrics = getResources().getDisplayMetrics();
+//            int densityDpi = (int)(metrics.density * 160f);
+//            LogUtil.log("densitiyDpi is:"+densityDpi);
+////            StaticLayout staticLayout;
+////            Class layoutCls=Class.forName("android.text.Layout");
+////            Field myFieldlayoutCls=layoutCls.getDeclaredField("EMOJI_FACTORY");
+////            Object obj=myFieldlayoutCls.get(null);
+//        }catch (Exception e){ }
+//
+//        TextView tv=new TextView(this);
+//        Layout lt=tv.getLayout();
     }
 
     private void testLoadLibMethod() {
