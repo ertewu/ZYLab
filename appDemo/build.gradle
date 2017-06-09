@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "23.0.2"
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "zystudio.demo"
-        minSdkVersion 9
-        targetSdkVersion 17
+        minSdkVersion 19
+        targetSdkVersion 23
     }
 
     buildTypes {
@@ -20,8 +21,8 @@ android {
 
 dependencies {
     compile project(':MyLib')
-    compile project(':Volley')
-    compile 'com.android.support:support-v4:19.1.0'
+    compile project(':MyVolley')
+    compile 'com.android.support:support-v4:23.0.0+'
     compile 'com.google.code.gson:gson:2.2.3'
     compile 'com.google.protobuf:protobuf-java:2.5.0'
     compile files('libs/cglib-2.2.2.jar')

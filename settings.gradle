@@ -1,3 +1,7 @@
-include ':MyLib', ':Volley' ,':demo'
-project(':MyLib').projectDir=new File('/home/wzy/1_Develop/6_Repo/ModuleMyLib')
-project(':Volley').projectDir=new File('/home/wzy/1_Develop/6_Repo/ModuleVolley')
+//include ':MyLib', ':Volley' ,':demo'
+//project(':MyLib').projectDir=new File('~/1_Develop/6_Repo/MyLib')
+//project(':Volley').projectDir=new File('~/1_Develop/6_Repo/volley')
+
+include ':appDemo', ':MyVolley'
+
+include ':MyLib'
