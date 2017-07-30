@@ -102,6 +102,5 @@
     <orderEntry type="module" module-name="MyLib" exported="" />
     <orderEntry type="module" module-name="MyVolley" exported="" />
     <orderEntry type="library" exported="" name="org.apache.http.legacy-android-23" level="project" />
-    <orderEntry type="library" exported="" name="MyVolley-unspecified" level="project" />
   </component>
 </module>

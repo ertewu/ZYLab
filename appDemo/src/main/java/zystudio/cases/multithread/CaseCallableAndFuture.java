@@ -20,12 +20,9 @@ public class CaseCallableAndFuture {
     }
 
     public void work() {
-        ExecutorService poolService = Executors.newCachedThreadPool();
-        ExecutorService poolService2 = Executors.newFixedThreadPool(5);
-        LogUtil.log("SericeClass is:" + poolService.getClass().getName());
-        LogUtil.log("SericeClass2 is:" + poolService2.getClass().getName());
-        // 上边的东西是为了看那个隐藏的类倒底是什么类名..好奇么
+
         ExecutorService exec = Executors.newCachedThreadPool();
+
         ArrayList<Future<String>> results = new ArrayList<Future<String>>();
         for (int i = 0; i < 5; i++) {
             results.add(exec.submit(new TaskWithResult(i)));
@@ -77,8 +74,7 @@ public class CaseCallableAndFuture {
                 break;
             }
             Thread.currentThread().sleep(sleep);
-            return "result of TaskWith Result:" + id + "|finish time:" + System.currentTimeMillis()
-                    % 100000;
+            return "result of TaskWith Result:" + id + "|finish time:" + System.currentTimeMillis()%100000;
         }
     }
 }

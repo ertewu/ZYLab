@@ -21,6 +21,15 @@ import android.app.Activity;
  *
  * ======== 通过大量的实验，我发现这个touch的可能性非常多，若要列出来，是不可穷尽的。但是这个例子已经足够。
  * 要理解这个touch事件，只能在保证其它不变的情况下，让某一个return 之类的改变，才能看到这个return带来的效果。就是这样
+ *
+ *<p>
+ * 以及对于 layout的onInterruptTouchEvent函数
+ * 对于不同的 action 拦截， 对于子View 的反应是不一样的
+ * 如果 layout  在 action_down时就拦截时 。那子View 会完整的收不到 所有事件，事件直接回流到 layout的 onTouchEvent 中 <br>
+ * 而如果 layout 在 action_move 时作了拦截 ，那就是子View 实际上已经收到过 前续事件了。 比如 action_down 肯定是收到了，或者之前的action_move 什么的
+ * 那么，这时子View的 dispatchTouchEvent 就会收到onTouchEvent 会收到一个 action_cancel 事件。
+ * 此后，再也收不到啥消息了就..所有消息继续走了layout的onTouch事件
+ *
  */
 public class CaseForTouch2 {
 

@@ -18,7 +18,7 @@ import java.lang.reflect.Field;
 
 import zystudio.mylib.utils.LogUtil;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +29,14 @@ public class MainActivity extends Activity {
 
     private void testLoadLibMethod() {
         String dataDir = getApplicationInfo().dataDir;
-        Log.i("ZYStudio", "dataDir is:" + dataDir); // data/data/zystudio.demo
+//      LogUtil.log("dataDir is:" + dataDir); // data/data/zystudio.demo
         String libha = System.mapLibraryName("haha");
-        Log.i("ZYStudio", "libha is:" + libha); // libhaha.so
+//        LogUtil.log("libha is:" + libha); // libhaha.so
         String pName = "";
         System.load(pName);
         String lpName = "";
         System.loadLibrary(lpName);
+
     }
 
 }

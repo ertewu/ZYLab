@@ -20,7 +20,8 @@ public class CaseThreadJoin {
     public void work() {
 //        showDemo1();
         // showDemo2();
-        showSimpleDemo();
+//        showMyDemo1();
+        showMyDemo2();
     }
 
     private void showDemo1() {
@@ -57,7 +58,7 @@ public class CaseThreadJoin {
     /**
      * 这是我自己写的demo，那个网址的例子还是稍微显得复杂点..,作对比的话把thread1.join()注掉，看log就可以
      */
-    private void showSimpleDemo() {
+    private void showMyDemo1() {
         Thread thread1 = new Thread(new Runnable() {
 
             @Override
@@ -82,6 +83,32 @@ public class CaseThreadJoin {
         }
         LogUtil.printTime("main thread end");
     }
+
+    private void showMyDemo2() {
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    for (int i = 0; i < 5; i++) {
+                        LogUtil.log("thread1 loop index:" + i);
+                        Thread.sleep(1000);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        LogUtil.printTime("main thread start");
+        thread1.start();
+        try {
+            thread1.join(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        LogUtil.printTime("main thread end");
+    }
+
 
     private static class ParentThread extends Thread {
         ChildThread mChildThread;

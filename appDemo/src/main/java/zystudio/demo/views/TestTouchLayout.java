@@ -48,6 +48,14 @@ public class TestTouchLayout extends FrameLayout {
         LogUtil.log("TestTouchLayout-onInterruptTouchEvent:" + ScreenUtil.getMotionActionStr(ev.getAction())
                 + "|result is:" + result);
         return result;
+
+//         if(ev.getAction()==MotionEvent.ACTION_DOWN){
+//             return true;
+//         }
+//        if (ev.getAction() == MotionEvent.ACTION_MOVE) {
+//            return true;
+//        }
+//         return false;
     }
 
     @Override

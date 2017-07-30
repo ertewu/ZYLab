@@ -28,7 +28,6 @@ public class CaseMaps {
     private HashMap<Integer,String> mHashMap;
     //android.util.ArrayMap, must be KITKAT above
     private ArrayMap<Integer,String> mArrayMap;
-    //android.utils.SpareArray
     private SparseArray<String> mSparseArray;
 
     public CaseMaps(){
