@@ -8,6 +8,7 @@ import zystudio.cases.javabase.container.CaseHashSet;
 import zystudio.cases.javabase.container.CaseMaps;
 import zystudio.cases.javabase.io.CaseIOReader;
 import zystudio.cases.javabase.CaseForEachIterator;
+import zystudio.cases.prepare.CaseBufferAllocate;
 import zystudio.cases.ui.CaseCustViewPager;
 
 import android.app.Activity;
@@ -16,7 +17,8 @@ public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
-        (new CaseHashSet()).work();
+        CaseBufferAllocate.obtain().work();
+//        (new CaseHashSet()).work();
 //        (new CaseIOReader()).work();
 //        (new CaseCharEncode(activity)).showCase();
 //        (new CaseArrayListNew()).work();
