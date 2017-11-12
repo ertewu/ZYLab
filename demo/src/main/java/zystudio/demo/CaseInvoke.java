@@ -3,6 +3,8 @@ package zystudio.demo;
 import zystudio.cases.dataprocess.net.CaseVelloyNetActivity;
 import zystudio.cases.graphics.CaseAsyncGenerateBitmap;
 import zystudio.cases.javabase.CaseCharEncode;
+import zystudio.cases.javabase.CaseForTryFinally;
+import zystudio.cases.javabase.CaseForTryFinally2;
 import zystudio.cases.javabase.container.CaseArrayListNew;
 import zystudio.cases.javabase.container.CaseHashSet;
 import zystudio.cases.javabase.container.CaseMaps;
@@ -17,7 +19,9 @@ public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
-        CaseBufferAllocate.obtain().work();
+        CaseForTryFinally.obtain().work();
+//        CaseForTryFinally2.obtain().work();
+//        CaseBufferAllocate.obtain().work();
 //        (new CaseHashSet()).work();
 //        (new CaseIOReader()).work();
 //        (new CaseCharEncode(activity)).showCase();
