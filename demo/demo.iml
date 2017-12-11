@@ -88,6 +88,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/check-manifest" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes-jar" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
@@ -111,5 +112,6 @@
     <orderEntry type="library" name="com.google.protobuf:protobuf-java:2.5.0@jar" level="project" />
     <orderEntry type="module" module-name="MyLib" />
     <orderEntry type="module" module-name="Volley" />
+    <orderEntry type="library" name="org.apache.http.legacy-android-23" level="project" />
   </component>
 </module>

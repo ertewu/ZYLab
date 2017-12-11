@@ -1,17 +1,8 @@
 package zystudio.demo;
 
-import zystudio.cases.dataprocess.net.CaseVelloyNetActivity;
-import zystudio.cases.graphics.CaseAsyncGenerateBitmap;
-import zystudio.cases.javabase.CaseCharEncode;
-import zystudio.cases.javabase.CaseForTryFinally;
-import zystudio.cases.javabase.CaseForTryFinally2;
-import zystudio.cases.javabase.container.CaseArrayListNew;
-import zystudio.cases.javabase.container.CaseHashSet;
-import zystudio.cases.javabase.container.CaseMaps;
-import zystudio.cases.javabase.io.CaseIOReader;
-import zystudio.cases.javabase.CaseForEachIterator;
-import zystudio.cases.prepare.CaseBufferAllocate;
-import zystudio.cases.ui.CaseCustViewPager;
+import zystudio.cases.designpattern.CaseDynamicProxy;
+import zystudio.cases.javabase.clsload.CaseClsLoadOrder;
+import zystudio.cases.javabase.container.CaseSynchronousQueue;
 
 import android.app.Activity;
 
@@ -19,7 +10,13 @@ public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
-        CaseForTryFinally.obtain().work();
+        CaseSynchronousQueue.obtain().showCase();
+//        CaseDynamicProxy.obtain().perform();
+//        CaseClsLoadOrder.showCase(activity);
+//        CaseActivityLifeCycle2.showCase(activity);
+//        CaseContextKinds.obtain(activity).work();
+//        CaseThreeActivityStart.work(activity);
+//        CaseForTryFinally.obtain().work();
 //        CaseForTryFinally2.obtain().work();
 //        CaseBufferAllocate.obtain().work();
 //        (new CaseHashSet()).work();
@@ -39,7 +36,6 @@ public class CaseInvoke {
         // CaseShow.show();
         // CaseForAnnotation.getInstance(activity).work();
         // CaseAOP.obtain().performTest();
-        // CaseDynamicProxy.obtain().perform();
         // CaseVelloyNetActivity.start(activity);
         // CaseBlockingQueue.getInstance().showCase();
         // CaseStaticLayout.getInstance(activity).work();

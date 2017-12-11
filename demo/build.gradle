@@ -4,6 +4,8 @@ android {
     compileSdkVersion 23
     buildToolsVersion '26.0.2'
 
+    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         applicationId "zystudio.demo"
         minSdkVersion  19
