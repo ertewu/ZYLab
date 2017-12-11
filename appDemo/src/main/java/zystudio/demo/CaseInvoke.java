@@ -86,26 +86,26 @@ public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
-        CaseSynchronousQueue.obtain().showCase();
-        CaseDynamicProxy.obtain().perform();
-        CaseClsLoadOrder.showCase(activity);
-        CaseActivityLifeCycle2.showCase(activity);
-        CaseContextKinds.obtain(activity).work();
-        CaseThreeActivityStart.work(activity);
-        CaseForTryFinally.obtain().work();
-        CaseForTryFinally2.obtain().work();
-        CaseBufferAllocate.obtain().work();
-//-----------------------------------develop start-----------------------------/
-        (new CaseAndroidPluginDemo()).work(activity);
-        (new CaseInitFieldDemo()).work();
-        (new CaseReentrantLock3()).work();
-        (new CaseReentrantLock()).work();
         CaseNotifyVsNotifyAll.work();
-        (new CaseMultiActivityLifeCycle(activity)).work();
-        invokeCase(CaseAutoBoxingUnboxing.class, activity);
-        invokeCase(CaseLinkedHashMapAccessOrder.class, activity);
-        invokeCase(CaseAnnotationFruit.class,activity);
-        CaseForAnnotation.getInstance(activity).work();
+//        CaseSynchronousQueue.obtain().showCase();
+//        CaseDynamicProxy.obtain().perform();
+//        CaseClsLoadOrder.showCase(activity);
+//        CaseActivityLifeCycle2.showCase(activity);
+//        CaseContextKinds.obtain(activity).work();
+//        CaseThreeActivityStart.work(activity);
+//        CaseForTryFinally.obtain().work();
+//        CaseForTryFinally2.obtain().work();
+//        CaseBufferAllocate.obtain().work();
+//-----------------------------------develop start-----------------------------/
+//        (new CaseAndroidPluginDemo()).work(activity);
+//        (new CaseInitFieldDemo()).work();
+//        (new CaseReentrantLock3()).work();
+//        (new CaseReentrantLock()).work();
+//        (new CaseMultiActivityLifeCycle(activity)).work();
+//        invokeCase(CaseAutoBoxingUnboxing.class, activity);
+//        invokeCase(CaseLinkedHashMapAccessOrder.class, activity);
+//        invokeCase(CaseAnnotationFruit.class,activity);
+//        CaseForAnnotation.getInstance(activity).work();
 //-----------------------------------develop End-----------------------------/
 //        (new CaseHashSet()).work();
 //        (new CaseIOReader()).work();
