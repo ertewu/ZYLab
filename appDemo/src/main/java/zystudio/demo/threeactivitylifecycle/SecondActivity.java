@@ -19,7 +19,7 @@ public class SecondActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LogUtil.log("Activity:" + getClass().getSimpleName() + "|onCreate");
-        this.startActivity(new Intent(this, ThirdActivity.class));
+//        this.startActivity(new Intent(this, ThirdActivity.class));
     }
 
     @Override

@@ -1,6 +1,9 @@
 package zystudio.demo;
 
+import zystudio.cases.javabase.dynamicproxy.case1.CaseDynamicProxy_Actor;
+import zystudio.cases.multithread.CaseCAS;
 import zystudio.demo.plugin.CaseAndroidPluginDemo;
+import zystudio.demo.threeactivitylifecycle.CaseMultiActivityLifeCycle;
 import zystudio.mylib.utils.LogUtil;
 
 import android.app.Activity;
@@ -58,12 +61,14 @@ public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 
-        (new CaseAndroidPluginDemo()).work(activity);
+        (new CaseCAS()).work();
+//        (new CaseMultiActivityLifeCycle(activity)).work();
+//        (new CaseDynamicProxy_Actor()).work();
+//        (new CaseAndroidPluginDemo()).work(activity);
 //        (new CaseInitFieldDemo()).work();
 //        (new CaseReentrantLock3()).work();
 //        (new CaseReentrantLock
 //        CaseNotifyVsNotifyAll.work();
-//        (new CaseMultiActivityLifeCycle(activity)).work();
 //        invokeCase(CaseAutoBoxingUnboxing.class, activity);
 //        invokeCase(CaseLinkedHashMapAccessOrder.class, activity);
 //        invokeCase(CaseAnnotationFruit.class,activity);

@@ -2,6 +2,6 @@
 //project(':MyLib').projectDir=new File('~/1_Develop/6_Repo/MyLib')
 //project(':Volley').projectDir=new File('~/1_Develop/6_Repo/volley')
 
-include ':appDemo', ':MyVolley'
+include ':appDemo', ':MyVolley', ':MyNativeLib'
 
 include ':MyLib'
