@@ -1,4 +1,4 @@
 //include ':demo' ,':Volley'
-include ':Volley', ':ModuleNative' ,':appdemo' ,':MyLib'
+include ':Volley', ':ModuleNative', ':app_partner' , ':app_demo',':MyLib'
 project(':MyLib').projectDir=new File('/Users/zylab/1_Develop/6_Repo_Network/ModuleMyLib')
 project(':Volley').projectDir=new File('/Users/zylab/1_Develop/6_Repo_Network/ModuleVolley')
