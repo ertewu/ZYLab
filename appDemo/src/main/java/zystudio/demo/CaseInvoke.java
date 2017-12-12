@@ -28,7 +28,6 @@ import zystudio.cases.prepare.CaseForViewRootImpl;
 import zystudio.demo.activitylifecycle.CaseThreeActivityStart;
 import zystudio.demo.activitylifecycle2.CaseActivityLifeCycle2;
 import zystudio.demo.plugin.CaseAndroidPluginDemo;
-import zystudio.demo.threeactivitylifecycle.CaseMultiActivityLifeCycle;
 import zystudio.mylib.utils.LogUtil;
 import android.app.Activity;
 import android.content.Context;

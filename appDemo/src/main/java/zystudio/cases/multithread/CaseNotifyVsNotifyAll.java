@@ -10,10 +10,10 @@ public class CaseNotifyVsNotifyAll {
 
     private static final Object obj = new Object();
 
-    private static class R implements Runnable {
+    private static class MyRunnable implements Runnable {
         int i;
 
-        R(int i) {
+        MyRunnable(int i) {
             this.i = i;
         }
 
@@ -23,8 +23,8 @@ public class CaseNotifyVsNotifyAll {
                     LogUtil.log("线程->" + i + " 等待中");
                     //wait 会把obj 锁交出去，但是sleep 可不会把锁交出去的
                     obj.wait();
-                    LogUtil.log("线程->" + i + " 在运行了");
-                    Thread.sleep(30000);
+                    LogUtil.log("线程->" + i + " 在运行了,马上sleep阶段");
+                    Thread.sleep(10000);
                     LogUtil.log("线程->" + i + " Sleep完毕");
                 }
             } catch (Exception e) {
@@ -39,20 +39,21 @@ public class CaseNotifyVsNotifyAll {
 
     private static void showDemo() {
 
-        Thread[] rs = new Thread[10];
+        Thread[] threads= new Thread[10];
         for (int i = 0; i < 10; i++) {
-            rs[i] = new Thread(new R(i));
+            threads[i] = new Thread(new MyRunnable(i));
         }
-        for (Thread r : rs) {
-            r.start();
+        for (Thread each : threads) {
+            each.start();
         }
-
         try {
             Thread.sleep(5000);
         } catch (Exception e) { }
         synchronized (obj) {
 //            obj.notifyAll();
+//            LogUtil.log("mainThread notifyAll occured");
             obj.notify();
+            LogUtil.log("mainThread notify occured");
         }
     }
 }

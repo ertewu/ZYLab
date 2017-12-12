@@ -89,20 +89,9 @@
             android:name="zystudio.demo.activitylifecycle2.Cycle2ActivityB"
             android:label="CycleActivityB">
         </activity>
-
-        <activity
-            android:name="zystudio.demo.threeactivitylifecycle.FirstActivity"
-            android:label="FirstActivity"></activity>
-        <activity
-            android:name="zystudio.demo.threeactivitylifecycle.SecondActivity"
-            android:label="SecondActivity"></activity>
-        <activity
-            android:name="zystudio.demo.threeactivitylifecycle.ThirdActivity"
-            android:label="ThirdActivity"></activity>
         <activity
             android:name="zystudio.demo.plugin.ClsLoaderActivity"
             android:label="ClsLoaderActivity"></activity>
-
         <receiver
             android:name=".ScreenReceiver"
             android:exported="true">
