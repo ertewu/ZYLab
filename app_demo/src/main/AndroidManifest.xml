@@ -110,5 +110,8 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+        <activity android:name=".ipc.ShowAIDLActivity"></activity>
+        <service android:name=".ipc.RemoteAIDLService" android:process=":binder_remote"
+            ></service>
     </application>
 </manifest>

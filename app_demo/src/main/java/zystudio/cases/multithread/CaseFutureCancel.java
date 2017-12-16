@@ -25,8 +25,8 @@ public class CaseFutureCancel {
     }
 
     public void work() {
-//        showCancelTrueDemo();
-        showCancelFalseDemo();
+        showCancelTrueDemo();
+//        showCancelFalseDemo();
     }
 
     private Future<?> cancelTrueFuture;

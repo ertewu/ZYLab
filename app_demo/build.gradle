@@ -21,8 +21,8 @@ android {
 }
 
 dependencies {
-    compile project(':MyLib')
     compile project(':Volley')
+    compile project(':ModuleNative')
     compile 'com.android.support:support-v4:23.0.0+'
     compile 'com.google.code.gson:gson:2.2.3'
     compile 'com.google.protobuf:protobuf-java:2.5.0'

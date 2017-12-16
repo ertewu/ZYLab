@@ -1,0 +1,19 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="zystudio.demo.ipc.ShowAIDLActivity"
+    >
+
+    <Button
+        android:id="@+id/bind_service_btn"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#ff0000"
+        android:text="Click there to Bind Servcie"
+        android:textSize="18sp"
+        android:onClick="onBindBtnClick"
+        android:textColor="@android:color/black" >
+    </Button>
+
+</FrameLayout>

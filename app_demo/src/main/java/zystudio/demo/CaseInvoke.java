@@ -1,37 +1,18 @@
 package zystudio.demo;
 
-import zystudio.cases.androidmechanism.CaseContextKinds;
-import zystudio.cases.androidmechanism.CaseDefaultBrowser;
-import zystudio.cases.dataprocess.CaseCreateTempFile;
-import zystudio.cases.dataprocess.net.CaseGson;
-import zystudio.cases.designpattern.CaseDecorator;
-import zystudio.cases.designpattern.CaseDynamicProxy;
-import zystudio.cases.designpattern.CaseObserver;
-import zystudio.cases.graphics.CaseBitmapOperate;
-import zystudio.cases.javabase.CaseAutoBoxingUnboxing;
-import zystudio.cases.javabase.CaseForTryFinally;
-import zystudio.cases.javabase.CaseForTryFinally2;
-import zystudio.cases.javabase.CaseShiftOperation;
-import zystudio.cases.javabase.annotation.CaseForAnnotation;
-import zystudio.cases.javabase.annotation_fruit.CaseAnnotationFruit;
-import zystudio.cases.javabase.clsload.CaseClsLoadOrder;
-import zystudio.cases.javabase.container.CaseLinkedHashMapAccessOrder;
-import zystudio.cases.javabase.container.CaseSynchronousQueue;
-import zystudio.cases.javabase.initfieldload.CaseInitFieldDemo;
-import zystudio.cases.multithread.CaseExecutor;
-import zystudio.cases.multithread.CaseNotifyVsNotifyAll;
-import zystudio.cases.multithread.CaseReentrantLock;
-import zystudio.cases.multithread.CaseReentrantLock3;
-import zystudio.cases.prepare.CaseBufferAllocate;
-import zystudio.cases.prepare.CaseForLinkedHashMap;
-import zystudio.cases.prepare.CaseForViewRootImpl;
+import zystudio.cases.graphics.touch.CaseForTouch2;
+import zystudio.cases.multithread.CaseCallableAndFuture;
+import zystudio.cases.multithread.CaseFutureCancel;
+import zystudio.cases.multithread.CaseSemaphore;
+import zystudio.cases.multithread.CaseThreadJoin;
 import zystudio.demo.activitylifecycle.CaseThreeActivityStart;
 import zystudio.demo.activitylifecycle2.CaseActivityLifeCycle2;
-import zystudio.demo.plugin.CaseAndroidPluginDemo;
+import zystudio.demo.ipc.ShowAIDLActivity;
 import zystudio.mylib.utils.LogUtil;
+import zystudio.nativemodule.CaseNativeInvoke;
+
 import android.app.Activity;
 import android.content.Context;
-import android.os.Handler;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -84,14 +65,22 @@ public class CaseInvoke {
     }
 
     public static void invokeCase(Activity activity) {
+        invokeCase(CaseNativeInvoke.class,activity);
 
-        CaseNotifyVsNotifyAll.work();
+//        CaseForTouch2.obtain(activity).work();
+//        CaseThreeActivityStart.work(activity);
+//        CaseActivityLifeCycle2.showCase(activity);
+
+//        CaseThreadJoin.obtain().work();
+//        CaseCallableAndFuture.instance().work();
+//        CaseFutureCancel.instance().work();
+//        CaseSemaphore.getInstance().work();
+//        ShowAIDLActivity.showCase(activity);
+//        CaseNotifyVsNotifyAll.work();
 //        CaseSynchronousQueue.obtain().showCase();
 //        CaseDynamicProxy.obtain().perform();
 //        CaseClsLoadOrder.showCase(activity);
-//        CaseActivityLifeCycle2.showCase(activity);
 //        CaseContextKinds.obtain(activity).work();
-//        CaseThreeActivityStart.work(activity);
 //        CaseForTryFinally.obtain().work();
 //        CaseForTryFinally2.obtain().work();
 //        CaseBufferAllocate.obtain().work();
@@ -132,10 +121,7 @@ public class CaseInvoke {
 //         CaseForCustViewAttr.obtain(activity).work();
 //         CaseParamDelivery.work();
 //         CaseAddAdd.work();
-//        CaseCallableAndFuture.instance().work();
-//        CaseFutureCancel.instance().work();
 //        CaseCountDownLatch.obtain().work();
-//        CaseThreadJoin.obtain().work();
 //         CaseJavaRandom.obtain().work();
 //         CaseDeepCopy.obtain().work();
 //         CaseShallowCopy.obtain().work();

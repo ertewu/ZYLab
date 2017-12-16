@@ -80,7 +80,6 @@ public class CaseCountDownLatch {
             }
             LogUtil.log(this.name + "活干完了！");
             mlatch.countDown();
-
         }
     }
 }

@@ -45,11 +45,11 @@ public class CaseSemaphore {
                     try {
                         // 获取许可
                         semp.acquire();
-                        System.out.println("Accessing: " + NO);
+                        LogUtil.log("Accessing:"+NO);
                         Thread.sleep((long) (Math.random() * 10000));
                         // 访问完后，释放
                         semp.release();
-                        System.out.println("-----------------"+semp.availablePermits());
+                        LogUtil.log(":release "+NO+",availablePermits:"+semp.availablePermits());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
