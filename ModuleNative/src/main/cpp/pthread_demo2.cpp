@@ -4,13 +4,14 @@
 // Good 完全跑通了
 //
 #include "pthread_demo2.h"
+#include "native-lib.h"
 #include <jni.h>
 #include <sys/types.h>
 #include <pthread.h>
 #include <android/log.h>
 
 
-static JavaVM *jvm=NULL;
+//static JavaVM *jvm=NULL;
 static jobject jobj=NULL;
 static jmethodID mid=NULL;
 
@@ -19,16 +20,16 @@ static int flag=-1;
 static pthread_mutex_t mutex=PTHREAD_MUTEX_INITIALIZER;
 static pthread_cond_t cond=PTHREAD_COND_INITIALIZER;
 
-jint JNI_OnLoad(JavaVM *vm , void *reserved){
-    __android_log_write(ANDROID_LOG_INFO,"ZYStudio","JNI_OnLoad occured");
-    jvm=vm;
-    return JNI_VERSION_1_6;
-}
-
-void JNI_OnUnLoad(JavaVM *vm ,void *reserved){
-    __android_log_write(ANDROID_LOG_INFO,"ZYStudio","JNI_OnUnLoad occured");
-    jvm=NULL;
-}
+//jint JNI_OnLoad(JavaVM *vm , void *reserved){
+//    __android_log_write(ANDROID_LOG_INFO,"ZYStudio","JNI_OnLoad occured");
+//    jvm=vm;
+//    return JNI_VERSION_1_6;
+//}
+//
+//void JNI_OnUnLoad(JavaVM *vm ,void *reserved){
+//    __android_log_write(ANDROID_LOG_INFO,"ZYStudio","JNI_OnUnLoad occured");
+//    jvm=NULL;
+//}
 
 //pthread中执行的函数
 void *nativeWork(void *args){

@@ -20,7 +20,7 @@ public class CaseNativeInvoke {
     public void work(){
         showCaseStringFromJNI();
         showPthreadDemo1();
-//        showPthreadDemo2();
+        showPthreadDemo2();
     }
 
     private void showCaseStringFromJNI(){

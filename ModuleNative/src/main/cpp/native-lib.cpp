@@ -1,15 +1,13 @@
 //
 // Created by zylab on 2017/12/15.
 //
-#include <jni.h>
+#include "native-lib.h"
 #include <string>
 #include <android/log.h>
 
 extern "C"
 JNIEXPORT jstring
 
-#define  LOG_TAG "ZYStudio"
-#define LOGI(a)  __android_log_write(ANDROID_LOG_INFO, LOG_TAG, a)
 
 /**
  * 实验 Native Code 打log
@@ -34,26 +32,14 @@ JNICALL Java_zystudio_nativemodule_CaseNativeInvoke_stringFromJNI(JNIEnv *env, j
  *  四、同时还有一个 JNI_OnUnLoad函数
  *  五、同一个so中，有多个JNI_OnLoad的话，编译器会报错,因为pthread_demo在用，这儿就先注释掉
  */
-JavaVM* gJVM;
 
-JNIEXPORT jint JNICALL  JNI_OnLoad(JavaVM *jvm,void *reserved){
+JNIEXPORT jint JNICALL  JNI_OnLoad(JavaVM *vm,void *reserved){
     LOGI("JNI_OnLoad occured");
-    gJVM = jvm;
+    jvm=vm;
     JNIEnv *env;
 //    (*gJVM)->GetEnv(gJVM, (void**)&env, JNI_VERSION_1_6);
     return JNI_VERSION_1_6;
 }
 
-void* run1(void *args){
-    //我想在这里打出当前线程名呢，怎么搞？
-    LOGI("pthread runnable occured");
-    return  NULL;
-}
 
-JNIEXPORT jint JNICALL Java_zystudio_nativemodule_CaseNativeInvoke_nativeThread(JNIEnv * env, jobject thiz){
-    pthread_t thread1;
-    LOGI("pthread invoke occured");
-    int a=pthread_create(&thread1, NULL ,run1,NULL);
-    return a;
-}
 
