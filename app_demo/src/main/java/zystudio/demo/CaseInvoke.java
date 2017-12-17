@@ -65,7 +65,8 @@ public class CaseInvoke {
     }
 
     public static void invokeCase(Activity activity) {
-        invokeCase(CaseNativeInvoke.class,activity);
+//        invokeCase(CaseNativeInvoke.class,activity);
+        (new CaseNativeInvoke()).work();
 
 //        CaseForTouch2.obtain(activity).work();
 //        CaseThreeActivityStart.work(activity);
