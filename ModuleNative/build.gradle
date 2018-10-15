@@ -15,10 +15,10 @@ android {
     }
 
     externalNativeBuild {
-            cmake {
-                path 'CMakeLists.txt'
-            }
+        ndkBuild {
+            path 'jni/Android.mk'
         }
+    }
 
     buildTypes {
         release {

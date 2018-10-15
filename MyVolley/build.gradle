@@ -27,6 +27,7 @@ apply plugin: 'com.android.library'
 
 repositories {
     jcenter()
+    google()
 }
 
 android {

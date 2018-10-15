@@ -36,7 +36,6 @@ public class MainActivity extends BaseActivity {
         System.load(pName);
         String lpName = "";
         System.loadLibrary(lpName);
-
     }
 
 }
