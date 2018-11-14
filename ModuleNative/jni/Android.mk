@@ -9,6 +9,6 @@ LOCAL_MODULE := native-lib
 # LOCAL_SRC_FILES := $(LOCAL_PATH)/../cpp/native-lib.cpp  $(LOCAL_PATH)/../cpp/pthread-demo1.cpp $(LOCAL_PATH)/../cpp/pthread-demo2.cpp
 
 
-LOCAL_SRC_FILES := native-lib.cpp  pthread_demo1.cpp pthread_demo2.cpp
+LOCAL_SRC_FILES := native-lib.cpp  pthread_demo1.cpp pthread_demo2.cpp person_info.c
 LOCAL_LDLIBS := -llog
 include $(BUILD_SHARED_LIBRARY)

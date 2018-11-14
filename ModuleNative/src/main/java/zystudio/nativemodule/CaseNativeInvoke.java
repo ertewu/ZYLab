@@ -20,7 +20,12 @@ public class CaseNativeInvoke {
     public void work(){
         showCaseStringFromJNI();
         showPthreadDemo1();
-        showPthreadDemo2();
+        //PthreadDemo2 是个实验，有用但是会crash，要写运行后边的代码先把这个注释掉
+//        showPthreadDemo2();
+
+        Person person=new Person();
+        getPersonInfoByIndex(person,2);
+        LogUtil.log("Person toString is:"+person.toString());
     }
 
     private void showCaseStringFromJNI(){
@@ -42,6 +47,7 @@ public class CaseNativeInvoke {
         recycle();
     }
 
+
     public native String stringFromJNI();
 
     public native int nativeThread();
@@ -51,4 +57,6 @@ public class CaseNativeInvoke {
     public native void run(LocalRunnable runnable);
 
     public native void recycle();
+
+    private native int getPersonInfoByIndex(Person person, int index);
 }

@@ -1,12 +1,15 @@
 //
 // Created by zylab on 2017/12/15.
 //
-#include "native-lib.h"
 #include <string>
-#include <android/log.h>
+#include "native-lib.h"
 
-extern "C"
-JNIEXPORT jstring
+extern "C" {
+   //在c++ 中引用c的函数，头文件这样弄最方便了, 否则就得在person_info.h 中加 cplusplus宏的判断
+   #include "person_info.h"
+}
+
+extern "C" JNIEXPORT jstring
 
 
 /**
@@ -33,11 +36,26 @@ JNICALL Java_zystudio_nativemodule_CaseNativeInvoke_stringFromJNI(JNIEnv *env, j
  *  五、同一个so中，有多个JNI_OnLoad的话，编译器会报错,因为pthread_demo在用，这儿就先注释掉
  */
 
-JNIEXPORT jint JNICALL  JNI_OnLoad(JavaVM *vm,void *reserved){
+JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm,void *reserved){
     LOGI("JNI_OnLoad occured");
-    jvm=vm;
+    jvm=vm;//native-lib中的静态jvm变量
     JNIEnv *env;
-//    (*gJVM)->GetEnv(gJVM, (void**)&env, JNI_VERSION_1_6);
+
+    jint result =-1;
+
+//     这个是JNI_1.4的写法，ijkplayer是用JNI_1.4的; fresco是用JNI_1.6的,但是我这样写编译不过，也不知道为啥
+//    if ((*vm)->GetEnv(vm, (void**)&env, JNI_VERSION_1_4)!=JNI_OK ){
+//        return result;
+//    }
+//    register_person_info_func(env) ;
+//    return JNI_VERSION_1_4;
+
+
+//    这个是JNI_1.6的写法，fresco的 init.cpp 是1.6的， 一定要加reinterpret_cast ，否则这里会编译不过
+    if(vm->GetEnv(reinterpret_cast<void**> (&env),JNI_VERSION_1_6)!=JNI_OK){
+        return result;
+    }
+    register_person_info_func(env) ;
     return JNI_VERSION_1_6;
 }
 
