@@ -26,7 +26,7 @@ static int registerNativeMethods(JNIEnv *env, const char *className, JNINativeMe
     return JNI_TRUE;
 }
 
-JNIEXPORT jint JNICALL getVideoInfoByFFmpeg(JNIEnv *env, jobject jVideoInfo, jstring url) {
+JNIEXPORT jint JNICALL getVideoInfoByFFmpeg(JNIEnv *env, jobject clazz, jobject jVideoInfo, jstring url) {
 
     jint result = -1;
 
@@ -61,13 +61,13 @@ int initJClsField(JNIEnv *env) {
 
     jclass jFFVideoInfoCls = env->FindClass(FFVIDEO_INFO_CLS);
 
-    jVideoInfoFields.nbFrames = env->GetFieldID(jFFVideoInfoCls, "nbFrames", "L");
+    jVideoInfoFields.nbFrames = env->GetFieldID(jFFVideoInfoCls, "nbFrames", "J");  //long的标签不是L,是J
     jVideoInfoFields.codecId = env->GetFieldID(jFFVideoInfoCls, "codecId", "I");
     jVideoInfoFields.codecName = env->GetFieldID(jFFVideoInfoCls, "codecName", "I");
     jVideoInfoFields.width = env->GetFieldID(jFFVideoInfoCls, "width", "I");
     jVideoInfoFields.height = env->GetFieldID(jFFVideoInfoCls, "height", "I");
     jVideoInfoFields.pix_fmt = env->GetFieldID(jFFVideoInfoCls, "pix_fmt", "I");
-    jVideoInfoFields.bitrate = env->GetFieldID(jFFVideoInfoCls, "bitrate", "L");
+    jVideoInfoFields.bitrate = env->GetFieldID(jFFVideoInfoCls, "bitrate", "J");  //long的标签不是L，是J
     jVideoInfoFields.avg_frame_rate = env->GetFieldID(jFFVideoInfoCls, "avg_frame_rate", "I");
 
     return 0;

@@ -40,7 +40,8 @@ struct JFFVideoInfoFields {
 
 static JavaVM *jvm;
 
-JNIEXPORT jint JNICALL getVideoInfoByFFmpeg(JNIEnv *env, jobject jVideoInfo, jstring url);
+//第一，第二个参数是对应native必须有的
+JNIEXPORT jint JNICALL getVideoInfoByFFmpeg(JNIEnv *env, jobject clazz, jobject jVideoInfo, jstring url);
 
 static int registerNativeMethods(JNIEnv *env, const char *className, JNINativeMethod *gMethods, int numMethods);
 
