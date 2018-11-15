@@ -17,6 +17,7 @@ typedef struct tagVideoInfo{
   int codecName; //codecName
   int width;
   int height;
+    char * pix_fmt_name;
   int pix_fmt; //video_stream_codec->pix_fmt
   long bitrate; //bitrate
   int avg_frame_rate; //帧数

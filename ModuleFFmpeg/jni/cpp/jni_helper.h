@@ -33,6 +33,7 @@ struct JFFVideoInfoFields {
     jfieldID width;
     jfieldID height;
     jfieldID pix_fmt; //video_stream_codec->pix_fmt
+    jfieldID pix_fmt_name; //视频帧格式名字
     jfieldID bitrate; //bitrate
     jfieldID avg_frame_rate; //帧数
 

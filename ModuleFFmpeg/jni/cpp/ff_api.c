@@ -63,6 +63,7 @@ int ff_dump_stream_info(FFVideoInfo *jInfo , const char * url) {
         jInfo->height = video_stream->codec->height;
         jInfo->avg_frame_rate = video_stream->avg_frame_rate.num / video_stream->avg_frame_rate.den;
         jInfo->bitrate=video_stream->codec->bit_rate;
+        jInfo->pix_fmt_name=fmt_name;
         LOGD("JInfo assign end");
     }
 
