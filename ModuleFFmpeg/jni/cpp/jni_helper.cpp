@@ -1,9 +1,5 @@
 #include "jni_helper.h"
 
-extern "C" {
-#include "ff_api.h"
-}
-
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
     jvm = vm;
     JNIEnv *env;
@@ -73,5 +69,8 @@ int initJClsField(JNIEnv *env) {
     jVideoInfoFields.pix_fmt = env->GetFieldID(jFFVideoInfoCls, "pix_fmt", "I");
     jVideoInfoFields.bitrate = env->GetFieldID(jFFVideoInfoCls, "bitrate", "L");
     jVideoInfoFields.avg_frame_rate = env->GetFieldID(jFFVideoInfoCls, "avg_frame_rate", "I");
+
+    return 0;
+
 }
 

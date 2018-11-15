@@ -47,8 +47,8 @@ include $(PREBUILT_SHARED_LIBRARY)
 # Program
 include $(CLEAR_VARS)
 LOCAL_MODULE := ffmpeg_api
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/include cpp/ff_api.h  cpp/jni_helper.h
 LOCAL_SRC_FILES := cpp/ff_api.c  cpp/jni_helper.cpp
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
 LOCAL_LDLIBS := -llog -lz
 LOCAL_SHARED_LIBRARIES := avcodec avdevice avfilter avformat avutil postproc swresample swscale
 include $(BUILD_SHARED_LIBRARY)

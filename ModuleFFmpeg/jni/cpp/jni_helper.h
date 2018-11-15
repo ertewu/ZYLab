@@ -7,11 +7,12 @@
 
 #include <jni.h>
 #include <android/log.h>
-#include "ff_api.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#include "ff_api.h"
 
 #define LOG_TAG "ZYStudio"
 
