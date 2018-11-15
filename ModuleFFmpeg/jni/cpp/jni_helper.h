@@ -16,7 +16,7 @@ extern "C" {
 
 #define LOG_TAG "ZYStudio"
 
-#define JNIREG_CLASS "com/ffmpeg/FFmpegUtil"
+#define JNIREG_CLASS "zystudio/ffmpeg/FFmpegUtil"
 
 #define  NUM_METHOD(x) ((int) (sizeof(x)/sizeof((x)[0])))
 
@@ -48,10 +48,11 @@ int initJClsField(JNIEnv *env);
 
 void setJVideoInfo(JNIEnv* env, jobject jVideoInfo , FFVideoInfo ffInfo);
 
+//JNINativeMethod的第二个参数，很容易错的, 比如底下那个分号
 static JNINativeMethod method_table[] = {
         {
                 "getVideoInfo",
-                "(Lcom/ffmpeg/FFVideoInfo;Ljava/lang/String)I",
+                "(Lzystudio/ffmpeg/FFVideoInfo;Ljava/lang/String;)I",
                 (void *) getVideoInfoByFFmpeg
         }
 };

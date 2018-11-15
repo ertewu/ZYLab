@@ -5,7 +5,7 @@ import android.util.Log;
 public class FFmpegUtil {
 
     static {
-        System.loadLibrary("libffmpeg_api");
+        System.loadLibrary("ffmpeg_api");
     }
 
     public native int getVideoInfo(FFVideoInfo info, String url);
