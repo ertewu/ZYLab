@@ -13,7 +13,7 @@ int ffmpeg_init( ){
   return 0;
 }
 
-int ff_dump_stream_info(FFVideoInfo info , char * url) {
+int ff_dump_stream_info(FFVideoInfo info , const char * url) {
 
     AVFormatContext *ic = avformat_alloc_context();
 

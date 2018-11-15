@@ -25,7 +25,7 @@ typedef struct tagVideoInfo{
 
 int ffmpeg_init();
 
-int ff_dump_stream_info(FFVideoInfo info , char * url);
+int ff_dump_stream_info(FFVideoInfo info , const char * url);
 
 #endif //TPP_FF_API
 
