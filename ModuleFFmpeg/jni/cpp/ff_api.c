@@ -13,7 +13,7 @@ int ffmpeg_init( ){
   return 0;
 }
 
-int ff_dump_stream_info(FFVideoInfo info , const char * url) {
+int ff_dump_stream_info(FFVideoInfo *jInfo , const char * url) {
 
     AVFormatContext *ic = avformat_alloc_context();
 
@@ -48,6 +48,17 @@ int ff_dump_stream_info(FFVideoInfo info , const char * url) {
         LOGD("video pix_fmt: %d\n", video_stream->codec->pix_fmt);
         LOGD("video bitrate %lld kb/s\n", (int64_t) video_stream->codec->bit_rate / 1000);
         LOGD("video avg_frame_rate: %d fps\n", video_stream->avg_frame_rate.num/video_stream->avg_frame_rate.den);
+
+        LOGD("JInfo assign begin");
+
+//        FFVideoInfo info= *jInfo;  info.nbFrames=video_stream->nb_frames ;  这样写不行，还有问题
+        jInfo->nbFrames=video_stream->nb_frames;
+        jInfo->pix_fmt = video_stream->codec->pix_fmt;
+        jInfo->width = video_stream->codec->width;
+        jInfo->height = video_stream->codec->height;
+        jInfo->avg_frame_rate = video_stream->avg_frame_rate.num / video_stream->avg_frame_rate.den;
+        jInfo->bitrate=video_stream->codec->bit_rate;
+        LOGD("JInfo assign end");
     }
 
     int audio_stream_idx = av_find_best_stream(ic, AVMEDIA_TYPE_AUDIO, -1, -1, NULL, 0);

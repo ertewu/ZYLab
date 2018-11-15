@@ -38,7 +38,7 @@ JNIEXPORT jint JNICALL getVideoInfoByFFmpeg(JNIEnv *env, jobject clazz, jobject 
 
     //* or & ; jstring to char*
     const char* urlChars= env->GetStringUTFChars(url,0);
-    result = ff_dump_stream_info(ffInfo, urlChars);
+    result = ff_dump_stream_info(&ffInfo, urlChars);
 
     setJVideoInfo(env, jVideoInfo, ffInfo);
 
