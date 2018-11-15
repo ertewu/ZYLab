@@ -1,3 +1,6 @@
+/**
+ * 仿照这个做的demo https://www.cnblogs.com/Miami/p/3716533.html
+ */
 #include "person_info.h"
 #include "native-lib.h"
 

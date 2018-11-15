@@ -8,6 +8,7 @@ import zystudio.cases.multithread.CaseThreadJoin;
 import zystudio.demo.activitylifecycle.CaseThreeActivityStart;
 import zystudio.demo.activitylifecycle2.CaseActivityLifeCycle2;
 import zystudio.demo.ipc.ShowAIDLActivity;
+import zystudio.ffmpeg.CaseFFmpegInvoke;
 import zystudio.mylib.utils.LogUtil;
 import zystudio.nativemodule.CaseNativeInvoke;
 
@@ -66,8 +67,10 @@ public class CaseInvoke {
 
     public static void invokeCase(Activity activity) {
 //        invokeCase(CaseNativeInvoke.class,activity);
-        (new CaseNativeInvoke()).work();
 
+        (new CaseFFmpegInvoke()).work();
+
+//        (new CaseNativeInvoke()).work();
 //        CaseForTouch2.obtain(activity).work();
 //        CaseThreeActivityStart.work(activity);
 //        CaseActivityLifeCycle2.showCase(activity);
