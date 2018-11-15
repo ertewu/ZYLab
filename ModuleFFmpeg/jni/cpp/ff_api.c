@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <libavutil/log.h>
+#include <libavutil/pixdesc.h>
 #include <libavformat/avformat.h>
 //#include "FFmpegB/libavutil/log.h"
 #include "jni_helper.h"
@@ -46,6 +47,10 @@ int ff_dump_stream_info(FFVideoInfo *jInfo , const char * url) {
         LOGD("video codec_name: %s\n", avcodec_get_name(video_stream->codec->codec_id));
         LOGD("video width x height: %d x %d\n", video_stream->codec->width, video_stream->codec->height);
         LOGD("video pix_fmt: %d\n", video_stream->codec->pix_fmt);
+
+        char * fmt_name=av_get_pix_fmt_name(video_stream->codec->pix_fmt);
+        LOGD("video pix_fmt name: %s\n", fmt_name);
+
         LOGD("video bitrate %lld kb/s\n", (int64_t) video_stream->codec->bit_rate / 1000);
         LOGD("video avg_frame_rate: %d fps\n", video_stream->avg_frame_rate.num/video_stream->avg_frame_rate.den);
 
