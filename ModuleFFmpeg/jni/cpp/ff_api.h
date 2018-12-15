@@ -3,7 +3,7 @@
 
 #include <jni.h>
 
-#define  FFVIDEO_INFO_CLS  "zystudio/ffmpeg/FFVideoInfo"
+#define  FFVIDEO_INFO_CLS  "tv/taobao/ffmpeg/FFVideoInfo"
 
 #define FF_LOGD(format, ...) av_log(NULL, AV_LOG_INFO, format, ##__VA_ARGS__);
 
@@ -20,6 +20,7 @@ typedef struct tagVideoInfo{
     char * pix_fmt_name;
   int pix_fmt; //video_stream_codec->pix_fmt
   long bitrate; //bitrate
+    long duration;//时长
   int avg_frame_rate; //帧数
 } FFVideoInfo;
 

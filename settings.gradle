@@ -1,4 +1,5 @@
 //include ':demo' ,':Volley'
-include ':Volley', ':ModuleNative', ':app_partner', ':ModuleFFmpeg' , ':app_demo',':MyLib'
+include ':Volley', ':ModuleNative', ':app_partner', ':app_demo', ':MyLib',
+        'ModuleFFmpeg'
 project(':MyLib').projectDir=new File('/Users/user/1_Develop/6_Repo_Network/ModuleMyLib')
 project(':Volley').projectDir=new File('/Users/user/1_Develop/6_Repo_Network/ModuleVolley')

@@ -1,0 +1,87 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('taobaoavsdk-debug.aar'))
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.taobao.android.mtl'
+//或者直接使用下面的插件
+//apply plugin: 'com.taobao.android.library'
+
+buildscript {
+
+    apply from: 'http://gitlab.alibaba-inc.com/android-build-system/buildscript/raw/master/mtl-versions.gradle'
+
+    repositories {
+        //本地库，local repository(${user.home}/.m2/repository)
+        mavenLocal()
+        maven {
+            url "http://mvnrepo.alibaba-inc.com/mvn/repository"
+        }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:${ANDROID_PLUGIN_VERSION}"  //请勿修改,使用统一的版本,方便升级更新
+        classpath "com.taobao.android.gradle:mtl-plugin:${MTL_PLUGIN_VERSION}" //请勿修改,使用统一的版本,方便升级更新
+        //引入其他的插件
+    }
+}
+
+//这里做了仓库,发布,mtl发布等功能,具体参考:http://site.alibaba.net/atlas_build_plugin/atlas-tool-doc/gradle/publish.html
+apply from: 'http://gitlab.alibaba-inc.com/android-build-system/buildscript/raw/master/mtl-publish.gradle'
+group = 'com.taobao.android'
+version = '1.0.11.12-tianzhu-SNAPSHOT'
+description = """taobaoavsdk"""
+
+dependencies {
+    providedCompile group: 'com.google.android', name: 'android', version: '4.0.1.2'
+    providedCompile group: 'com.google.android', name: 'support-v4', version: '21.0.2'
+    providedCompile group: 'com.taobao.android', name: 'taobaoavsdk_native', version: '1.0.2.43-SNAPSHOT'
+
+    providedCompile('com.taobao.android:TaoBaoServices:2.5.0.5-bootImage-SNAPSHOT') {
+        changing = true
+    }
+    providedCompile 'com.taobao.android:servicehub:2.0.0.11'
+
+    providedCompile ('com.taobao.android:ut-abtest:1.0.3.1@aar')
+
+    providedCompile group: 'com.alibaba.mtl', name: 'app-monitor-sdk', version: '2.3.8'
+    providedCompile('com.taobao.android:ut-analytics:6.5.4.5@jar')
+
+    providedCompile('com.taobao.android:networksdk:3.3.1.1-SNAPSHOT')
+    compile 'com.aliyun:aliyun-pcdn-sdk-phone-single:2.1.1.10191'
+    compile('com.alibaba.android:vrbase:0.0.1.17@aar') { changing = true }
+    compile('com.alibaba.android:simple-panovr:0.0.1.7@aar') { changing = true }
+
+    compile group: 'com.taobao.android', name: 'videoplayermonitor', version: '2.0.0.11', ext: 'aar'
+    providedCompile 'com.ali.ha:datahub:1.0.0.19@jar'
+
+    providedCompile 'com.taobao.android:ski:2.0.13.36'
+
+    providedCompile('com.taobao.android:orange:1.0.8') {
+        transitive = false
+    }
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.1'
+    lintOptions {
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+    distributionUrl = 'http://mirrors.taobao.net/mirror/gradle/gradle-2.12-bin.zip'
+}
+

@@ -16,7 +16,7 @@ extern "C" {
 
 #define LOG_TAG "ZYStudio"
 
-#define JNIREG_CLASS "zystudio/ffmpeg/FFmpegUtil"
+#define JNIREG_CLASS "tv/taobao/ffmpeg/FFmpegUtil"
 
 #define  NUM_METHOD(x) ((int) (sizeof(x)/sizeof((x)[0])))
 
@@ -36,6 +36,7 @@ struct JFFVideoInfoFields {
     jfieldID pix_fmt_name; //视频帧格式名字
     jfieldID bitrate; //bitrate
     jfieldID avg_frame_rate; //帧数
+    jfieldID duration;//时长
 
 } jVideoInfoFields;
 
@@ -54,7 +55,7 @@ void setJVideoInfo(JNIEnv* env, jobject jVideoInfo , FFVideoInfo ffInfo);
 static JNINativeMethod method_table[] = {
         {
                 "getVideoInfo",
-                "(Lzystudio/ffmpeg/FFVideoInfo;Ljava/lang/String;)I",
+                "(Ltv/taobao/ffmpeg/FFVideoInfo;Ljava/lang/String;)I",
                 (void *) getVideoInfoByFFmpeg
         }
 };

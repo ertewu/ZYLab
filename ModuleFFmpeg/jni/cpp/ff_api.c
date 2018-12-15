@@ -38,6 +38,7 @@ int ff_dump_stream_info(FFVideoInfo *jInfo , const char * url) {
 
     int64_t duration = ic->duration / AV_TIME_BASE;
     LOGD("duration: %lld s\n", duration);
+    jInfo->duration=(long) duration;
 
     int video_stream_idx = av_find_best_stream(ic, AVMEDIA_TYPE_VIDEO, -1, -1, NULL, 0);
     if (video_stream_idx >= 0) {
@@ -45,7 +46,7 @@ int ff_dump_stream_info(FFVideoInfo *jInfo , const char * url) {
         LOGD("video nb_frames: %lld\n", video_stream->nb_frames);
         LOGD("video codec_id: %d\n", video_stream->codec->codec_id);
         LOGD("video codec_name: %s\n", avcodec_get_name(video_stream->codec->codec_id));
-        LOGD("video width x height: %d x %d\n", video_stream->codec->width, video_stream->codec->height);
+        LOGD("video width x height: %d x %d\n", video_stream->codec->coded_width, video_stream->codec->coded_height);
         LOGD("video pix_fmt: %d\n", video_stream->codec->pix_fmt);
 
         char * fmt_name=av_get_pix_fmt_name(video_stream->codec->pix_fmt);
@@ -59,8 +60,8 @@ int ff_dump_stream_info(FFVideoInfo *jInfo , const char * url) {
 //        FFVideoInfo info= *jInfo;  info.nbFrames=video_stream->nb_frames ;  这样写不行，还有问题
         jInfo->nbFrames=video_stream->nb_frames;
         jInfo->pix_fmt = video_stream->codec->pix_fmt;
-        jInfo->width = video_stream->codec->width;
-        jInfo->height = video_stream->codec->height;
+        jInfo->width = video_stream->codec->coded_width;
+        jInfo->height = video_stream->codec->coded_height;
         jInfo->avg_frame_rate = video_stream->avg_frame_rate.num / video_stream->avg_frame_rate.den;
         jInfo->bitrate=video_stream->codec->bit_rate;
         jInfo->pix_fmt_name=fmt_name;

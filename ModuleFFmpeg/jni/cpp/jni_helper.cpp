@@ -57,6 +57,7 @@ void setJVideoInfo(JNIEnv *env, jobject jVideoInfo, FFVideoInfo ffInfo) {
 
     jstring j_pix_format_name= env->NewStringUTF(ffInfo.pix_fmt_name);
     env->SetObjectField(jVideoInfo,jVideoInfoFields.pix_fmt_name,j_pix_format_name);
+    env->SetLongField(jVideoInfo,jVideoInfoFields.duration,ffInfo.duration);
     env->SetIntField(jVideoInfo, jVideoInfoFields.avg_frame_rate, ffInfo.avg_frame_rate);
 }
 
@@ -73,6 +74,7 @@ int initJClsField(JNIEnv *env) {
     jVideoInfoFields.pix_fmt_name=env->GetFieldID(jFFVideoInfoCls,"pix_fmt_name","Ljava/lang/String;");
     jVideoInfoFields.bitrate = env->GetFieldID(jFFVideoInfoCls, "bitrate", "J");  //long的标签不是L，是J
     jVideoInfoFields.avg_frame_rate = env->GetFieldID(jFFVideoInfoCls, "avg_frame_rate", "I");
+    jVideoInfoFields.duration=env->GetFieldID(jFFVideoInfoCls,"duration","J");
 
     return 0;
 
