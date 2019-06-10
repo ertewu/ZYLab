@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,10 +18,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import zystudio.demo.R;
+import zystudio.mylib.utils.LogUtil;
 
 public class CaseNestedScrollFragment extends Fragment {
 
 
+    private NestedScrollView mNestView;
     private RecyclerView mRecycleView;
     private RecyclerviewAdapter mAdapter;
 
@@ -34,6 +37,8 @@ public class CaseNestedScrollFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View content = inflater.inflate(R.layout.case_nestedscroll_frag, container, false);
+
+        mNestView=content.findViewById(R.id.nest_view);
         mRecycleView = content.findViewById(R.id.rc);
         RecyclerView.LayoutManager llm = initLayoutManager();
         List<String> data = new ArrayList<>();
@@ -44,6 +49,13 @@ public class CaseNestedScrollFragment extends Fragment {
         mAdapter = new RecyclerviewAdapter(getContext(), data);
         mRecycleView.setAdapter(mAdapter);
         mRecycleView.setLayoutManager(llm);
+        mRecycleView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                LogUtil.log("mRecycleView.height is:"+recyclerView.getHeight()+"|"+recyclerView.getMeasuredHeight());
+            }
+        });
         return content;
     }
 
