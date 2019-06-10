@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 26
     buildToolsVersion '27.0.3'
 
     useLibrary 'org.apache.http.legacy'
@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "zystudio.demo"
         minSdkVersion  19
-        targetSdkVersion 23
+        targetSdkVersion 26
     }
 
     buildTypes {
@@ -25,7 +25,10 @@ dependencies {
     compile project(':ModuleNative')
 //    compile project(':taobaoavsdk')
 //    compile project(':ModuleFFmpeg')
-    compile 'com.android.support:support-v4:23.0.0+'
+    compile 'com.android.support:support-v4:26.0.0+'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.1.3'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.google.code.gson:gson:2.2.3'
     compile 'com.google.protobuf:protobuf-java:2.5.0'
     compile files('libs/cglib-2.2.2.jar')
