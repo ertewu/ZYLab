@@ -18,12 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import zystudio.demo.R;
+import zystudio.demo.views.MyNestedScrollView;
 import zystudio.mylib.utils.LogUtil;
 
 public class CaseNestedScrollFragment extends Fragment {
 
 
-    private NestedScrollView mNestView;
+    private MyNestedScrollView mNestView;
     private RecyclerView mRecycleView;
     private RecyclerviewAdapter mAdapter;
 
@@ -38,7 +39,7 @@ public class CaseNestedScrollFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View content = inflater.inflate(R.layout.case_nestedscroll_frag, container, false);
 
-        mNestView=content.findViewById(R.id.nest_view);
+        mNestView = content.findViewById(R.id.nest_view);
         mRecycleView = content.findViewById(R.id.rc);
         RecyclerView.LayoutManager llm = initLayoutManager();
         List<String> data = new ArrayList<>();
@@ -49,11 +50,15 @@ public class CaseNestedScrollFragment extends Fragment {
         mAdapter = new RecyclerviewAdapter(getContext(), data);
         mRecycleView.setAdapter(mAdapter);
         mRecycleView.setLayoutManager(llm);
+
+        //没有这句话，NestScrollView不会fling
+        mRecycleView.setNestedScrollingEnabled(false);
+
         mRecycleView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                LogUtil.log("mRecycleView.height is:"+recyclerView.getHeight()+"|"+recyclerView.getMeasuredHeight());
+                LogUtil.log("mRecycleView.height is:" + recyclerView.getHeight() + "|" + recyclerView.getMeasuredHeight()+"|"+mNestView.getHeight());
             }
         });
         return content;
@@ -61,7 +66,8 @@ public class CaseNestedScrollFragment extends Fragment {
 
     protected RecyclerView.LayoutManager initLayoutManager() {
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-        llm.setSmoothScrollbarEnabled(true);
+        //        llm.setSmoothScrollbarEnabled(true);
+//        llm.setSmoothScrollbarEnabled(false);
         return llm;
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<zystudio.demo.views.MyNestedScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nest_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -13,7 +13,7 @@
         <!-- This is the Header -->
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:background="#888888"
             android:gravity="center"
             android:text="Header"
@@ -28,7 +28,7 @@
         <!-- This is the Footer -->
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:background="#888888"
             android:gravity="center"
             android:text="Footer"
@@ -37,5 +37,5 @@
 
     </LinearLayout>
 
-</android.support.v4.widget.NestedScrollView>
+</zystudio.demo.views.MyNestedScrollView>
 
